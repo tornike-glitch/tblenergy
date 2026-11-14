@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ka" data-lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>სამედიცინო აუდიტი · TBL Energy</title>
+<meta name="description" content="სამედიცინო აპარატურის ელექტროუსაფრთხოების ტესტირება IEC 60601-1 და NFPA 99.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Georgian:wght@300..700&family=Noto+Sans:wght@300..700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var l=localStorage.getItem('btl-lang');if(l==='en'||l==='ka')document.documentElement.setAttribute('data-lang',l)}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main"><span data-l="ka">მთავარ შინაარსზე გადასვლა</span><span data-l="en">Skip to content</span></a>
+<header class="site-header">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html" aria-label="TBL Energy"><svg class="brand-mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="boltd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd75e"/><stop offset="1" stop-color="#f0b400"/></linearGradient><linearGradient id="shd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d6f99"/><stop offset="1" stop-color="#6fa8d6"/></linearGradient></defs><path d="M60 9 Q80 11 100 19 V58 Q100 92 60 112 Q20 92 20 58 V19 Q40 11 60 9 Z" fill="none" stroke="url(#shd)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path fill="#eef1f4" d="M6 38 H54 V48 H6 Z"/><path fill="#eef1f4" fill-rule="evenodd" transform="translate(58,0) scale(0.68,1) translate(-14,0)" d="M14 38 H41 C51 38 56 44 56 51 C56 56 53.5 59.5 49.5 61.5 C55 63.5 58 68.5 58 75 C58 84 52 90 42 90 H14 Z M27 47 V57.5 H39.5 C43.5 57.5 45.5 55.5 45.5 52.2 C45.5 49 43.5 47 39.5 47 Z M27 66.5 V81 H40.5 C44.5 81 47 78.5 47 73.8 C47 69.2 44.5 66.5 40.5 66.5 Z"/><path fill="#eef1f4" d="M91 38 H101 V80 H114 V90 H91 Z"/><path d="M44 3 L18 64 H31 L21 117 L49 52 H36 Z" fill="url(#boltd)" stroke="#0d1116" stroke-width="4" stroke-linejoin="round" paint-order="stroke"/><g stroke="#141414" stroke-width="2.2" fill="none" stroke-linecap="round"><path d="M30 56 H38 L35 66"/></g><g fill="#ffd75e" stroke="#141414" stroke-width="2"><circle cx="30" cy="56" r="2.6"/><circle cx="38" cy="56" r="2.6"/><circle cx="35" cy="66" r="2.6"/></g></svg><span class="brand-name"><b>TBL ENERGY</b><small>Electrical services</small></span></a>
+    <nav class="nav" aria-label="Main"><a href="index.html"><span data-l="ka">მთავარი</span><span data-l="en">Home</span></a><a href="services.html"><span data-l="ka">სერვისები</span><span data-l="en">Services</span></a><a href="testing.html"><span data-l="ka">გაზომვები</span><span data-l="en">Testing</span></a><a href="projects.html"><span data-l="ka">პროექტები</span><span data-l="en">Projects</span></a><a href="contact.html"><span data-l="ka">კონტაქტი</span><span data-l="en">Contact</span></a></nav>
+    <div class="hdr-tools">
+      <div class="lang" role="group" aria-label="Language"><button type="button" id="lang-ka" data-set="ka" aria-pressed="true">KA</button><button type="button" id="lang-en" data-set="en" aria-pressed="false">EN</button></div>
+      <a class="hdr-call" href="tel:+995500055859" aria-label="Call +995 500 05 58 59"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="mono">+995 500 05 58 59</span></a>
+    </div>
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Mobile"><a href="index.html"><span data-l="ka">მთავარი</span><span data-l="en">Home</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="services.html"><span data-l="ka">სერვისები</span><span data-l="en">Services</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="testing.html"><span data-l="ka">გაზომვები</span><span data-l="en">Testing</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="projects.html"><span data-l="ka">პროექტები</span><span data-l="en">Projects</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="contact.html"><span data-l="ka">კონტაქტი</span><span data-l="en">Contact</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-primary" href="tel:+995500055859"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="mono">+995 500 05 58 59</span></a></nav>
+<main id="main">
+<section class="ph">
+  <div class="ph-bg"><canvas class="circuit" data-density=".7" aria-hidden="true"></canvas></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html"><span data-l="ka">მთავარი</span><span data-l="en">Home</span></a><span aria-hidden="true">/</span><span><span data-l="ka">სამედიცინო</span><span data-l="en">Medical</span></span></nav>
+    <h1><span data-l="ka">კლინიკებისა და ლაბორატორიების ელექტროუსაფრთხოება</span><span data-l="en">Electrical safety for clinics and laboratories</span></h1>
+    <p class="lead"><span data-l="ka">სამედიცინო აპარატურის ტესტირება საერთაშორისო სტანდარტების შესაბამისად, Fluke ESA609 ანალიზატორით.</span><span data-l="en">Testing of medical equipment to international standards with the Fluke ESA609 analyzer.</span></p>
+    
+  </div>
+</section>
+<section class="sec light"><div class="wrap">
+  <div class="sec-head"><div><p class="eyebrow"><span data-l="ka">რას ვამოწმებთ</span><span data-l="en">What we test</span></p><h2 class="h-lg"><span data-l="ka">სამი გაზომვა, რომელიც პაციენტის უსაფრთხოებას განსაზღვრავს</span><span data-l="en">Three measurements that define patient safety</span></h2></div></div>
+  <div class="cards3">
+    <div><span class="k">01</span><b><span data-l="ka">ჟონვის დენები</span><span data-l="en">Leakage currents</span></b><p><span data-l="ka">დენი, რომელიც აპარატიდან შეიძლება გაედინოს პაციენტზე ან ოპერატორზე.</span><span data-l="en">Current that may flow from the device to a patient or operator.</span></p></div>
+    <div><span class="k">02</span><b><span data-l="ka">კორპუსზე დენის ჟონვა</span><span data-l="en">Enclosure leakage</span></b><p><span data-l="ka">აპარატის კორპუსის უსაფრთხოება შეხებისას.</span><span data-l="en">Safety of the device housing when touched.</span></p></div>
+    <div><span class="k">03</span><b><span data-l="ka">დამცავი მიწის წინაღობა</span><span data-l="en">Protective earth resistance</span></b><p><span data-l="ka">დამიწების გამტარის მთლიანობა და წინაღობა.</span><span data-l="en">Integrity and resistance of the protective earth conductor.</span></p></div>
+  </div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="sec-head"><div><p class="eyebrow"><span data-l="ka">სტანდარტები და აპარატურა</span><span data-l="en">Standards & equipment</span></p><h2 class="h-lg"><span data-l="ka">ვმუშაობთ საერთაშორისო ნორმებით</span><span data-l="en">We work to international standards</span></h2></div></div>
+  <div class="stds">
+    <div><b>IEC 60601-1</b><span><span data-l="ka">სამედიცინო ელექტროაპარატურის უსაფრთხოების ძირითადი სტანდარტი</span><span data-l="en">Core safety standard for medical electrical equipment</span></span></div>
+    <div><b>NFPA 99</b><span><span data-l="ka">ჯანდაცვის ობიექტების კოდექსი</span><span data-l="en">Health care facilities code</span></span></div>
+    <div><b>Fluke ESA609</b><span><span data-l="ka">ელექტროუსაფრთხოების ანალიზატორი</span><span data-l="en">Electrical safety analyzer</span></span></div>
+  </div>
+</div></section>
+<section class="sec light alt"><div class="wrap split">
+  <div class="l"><p class="eyebrow"><span data-l="ka">ვისთვის</span><span data-l="en">Who it is for</span></p><h2 class="h-lg"><span data-l="ka">სამედიცინო დაწესებულებები</span><span data-l="en">Healthcare facilities</span></h2></div>
+  <div class="r">
+    <p class="lead" style="margin-bottom:28px"><span data-l="ka">ტესტირების შემდეგ იღებთ ელექტროუსაფრთხოების სერთიფიცირების დოკუმენტს თითოეულ შემოწმებულ აპარატზე.</span><span data-l="en">After testing you receive an electrical safety certification document for each device checked.</span></p>
+    <ul class="checks"><li><span><span data-l="ka">კლინიკები</span><span data-l="en">Clinics</span></span></li><li><span><span data-l="ka">ლაბორატორიები</span><span data-l="en">Laboratories</span></span></li><li><span><span data-l="ka">სამედიცინო აპარატურის მომწოდებლები</span><span data-l="en">Medical equipment suppliers</span></span></li></ul>
+  </div>
+</div></section>
+<section class="cta">
+  <svg class="wave" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 100 C 100 20, 200 20, 300 100 S 500 180, 600 100 S 800 20, 900 100 S 1100 180, 1200 100"/><path d="M0 100 C 100 180, 200 180, 300 100 S 500 20, 600 100 S 800 180, 900 100 S 1100 20, 1200 100" style="opacity:.5"/></svg>
+  <div class="wrap">
+    <div>
+      <h2><span data-l="ka">დაგეგმეთ სამუშაო ან გაზომვა</span><span data-l="en">Plan your project or test</span></h2>
+      <p><span data-l="ka">დაგვირეკეთ, მოგვიყევით ობიექტზე და შევათანხმოთ დათვალიერების დრო.</span><span data-l="en">Call us, tell us about the site, and we will arrange a visit.</span></p>
+    </div>
+    <div>
+      <a class="phone" href="tel:+995500055859">+995 500 05 58 59</a>
+      <a class="btn" href="contact.html"><span data-l="ka">ყველა საკონტაქტო არხი</span><span data-l="en">All contact options</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap ft">
+    <div>
+      <a class="brand" href="index.html" aria-label="TBL Energy"><svg class="brand-mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="boltd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd75e"/><stop offset="1" stop-color="#f0b400"/></linearGradient><linearGradient id="shd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d6f99"/><stop offset="1" stop-color="#6fa8d6"/></linearGradient></defs><path d="M60 9 Q80 11 100 19 V58 Q100 92 60 112 Q20 92 20 58 V19 Q40 11 60 9 Z" fill="none" stroke="url(#shd)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path fill="#eef1f4" d="M6 38 H54 V48 H6 Z"/><path fill="#eef1f4" fill-rule="evenodd" transform="translate(58,0) scale(0.68,1) translate(-14,0)" d="M14 38 H41 C51 38 56 44 56 51 C56 56 53.5 59.5 49.5 61.5 C55 63.5 58 68.5 58 75 C58 84 52 90 42 90 H14 Z M27 47 V57.5 H39.5 C43.5 57.5 45.5 55.5 45.5 52.2 C45.5 49 43.5 47 39.5 47 Z M27 66.5 V81 H40.5 C44.5 81 47 78.5 47 73.8 C47 69.2 44.5 66.5 40.5 66.5 Z"/><path fill="#eef1f4" d="M91 38 H101 V80 H114 V90 H91 Z"/><path d="M44 3 L18 64 H31 L21 117 L49 52 H36 Z" fill="url(#boltd)" stroke="#0d1116" stroke-width="4" stroke-linejoin="round" paint-order="stroke"/><g stroke="#141414" stroke-width="2.2" fill="none" stroke-linecap="round"><path d="M30 56 H38 L35 66"/></g><g fill="#ffd75e" stroke="#141414" stroke-width="2"><circle cx="30" cy="56" r="2.6"/><circle cx="38" cy="56" r="2.6"/><circle cx="35" cy="66" r="2.6"/></g></svg><span class="brand-name"><b>TBL ENERGY</b><small>Electrical services</small></span></a>
+      <p><span data-l="ka">ელექტრომონტაჟი, ფარების აწყობა, გაზომვები და ელექტროაუდიტი ევროპული სტანდარტებით.</span><span data-l="en">Electrical installation, panel assembly, testing and electrical audits to European standards.</span></p>
+    </div>
+    <div>
+      <h4><span data-l="ka">გვერდები</span><span data-l="en">Pages</span></h4>
+      <ul><li><a href="services.html"><span data-l="ka">სერვისები</span><span data-l="en">Services</span></a></li><li><a href="testing.html"><span data-l="ka">გაზომვები</span><span data-l="en">Testing</span></a></li><li><a href="projects.html"><span data-l="ka">პროექტები</span><span data-l="en">Projects</span></a></li><li><a href="contact.html"><span data-l="ka">კონტაქტი</span><span data-l="en">Contact</span></a></li></ul>
+    </div>
+    <div>
+      <h4><span data-l="ka">სერვისები</span><span data-l="en">Services</span></h4>
+      <ul><li><a href="services.html#emergency"><span data-l="ka">ელექტრიკი გამოძახებით</span><span data-l="en">Call-out electrician</span></a></li><li><a href="services.html#panels"><span data-l="ka">ელექტრო გამანაწილებელი ფარები</span><span data-l="en">Electrical distribution panels</span></a></li><li><a href="services.html#installation"><span data-l="ka">ელექტროგაყვანილობის მონტაჟი</span><span data-l="en">Wiring installation</span></a></li><li><a href="services.html#repair"><span data-l="ka">დაზიანებული გაყვანილობის ძებნა და რემონტი</span><span data-l="en">Fault finding & wiring repair</span></a></li><li><a href="services.html#generators"><span data-l="ka">გენერატორები და UPS</span><span data-l="en">Generators & UPS</span></a></li><li><a href="services.html#high-voltage"><span data-l="ka">მაღალი ძაბვის სამუშაოები</span><span data-l="en">High-voltage work</span></a></li><li><a href="services.html#earthing"><span data-l="ka">დამიწება და კონტურების გაზომვა</span><span data-l="en">Earthing & loop measurement</span></a></li></ul>
+    </div>
+    <div>
+      <h4><span data-l="ka">კონტაქტი</span><span data-l="en">Contact</span></h4>
+      <ul>
+        <li><a class="mono" href="tel:+995500055859">+995 500 05 58 59</a></li>
+        <li><a href="https://m.me/">Messenger</a></li>
+        <li><a href="https://www.facebook.com/">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ft-bottom"><span>© 2026 TBL Energy</span><span><span data-l="ka">ყველა სამუშაოზე გარანტია</span><span data-l="en">All work under warranty</span></span></div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

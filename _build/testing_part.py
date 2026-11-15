@@ -23,7 +23,7 @@ TESTS = [
       dka='ძაბვის, დენისა და წინაღობის ხანგრძლივი მონიტორინგი და მონაცემთა ლოგირება გრაფიკული გამოსახვით. სიხშირული ამძრავების (VFD) ზუსტი დიაგნოსტიკა და რემონტი.',
       den='Long-term monitoring of voltage, current and resistance with graphical data logging. Precise diagnostics and repair of variable frequency drives (VFD).',
       dev=['Fluke 287', 'Fluke 1587FC']),
- dict(ic='ins', ka='მაღალი და დაბალი ძაბვის კაბელების იზოლაციის შემოწმება', en='HV and LV cable insulation testing',
+ dict(ic='ins', bg='img/test-insulation.jpg', ka='მაღალი და დაბალი ძაბვის კაბელების იზოლაციის შემოწმება', en='HV and LV cable insulation testing',
       dka='კაბელების იზოლაციის შემოწმება, PI პოლარიზაციის ინდექსისა და DAR დიელექტრიკული შთანთქმის კოეფიციენტის ავტომატური გამოთვლა.',
       den='Cable insulation testing with automatic calculation of the polarization index (PI) and dielectric absorption ratio (DAR).',
       dev=['Fluke 1550C', 'Fluke 1587FC']),

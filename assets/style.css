@@ -1068,17 +1068,11 @@ html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}
 @media (min-width:641px){.mbar-m{display:none}}
 @media (min-width:961px){.hero-badges{right:clamp(100px,8vw,120px)}}
 
-/* test card with photo background */
-.tc-photo{overflow:hidden;isolation:isolate;border-color:rgba(240,180,0,.3);background:#0c1116;min-height:380px;justify-content:flex-end}
-.tc-photo .tc-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:-2;transition:transform 1.2s var(--ease)}
-.tc-photo::before{opacity:1!important;left:0!important;right:0!important;top:0!important;bottom:0;height:auto!important;z-index:-1;background:linear-gradient(180deg,rgba(10,14,18,.15) 0%,rgba(10,14,18,.3) 30%,rgba(10,14,18,.85) 62%,rgba(10,14,18,.96) 100%)!important}
-.tc-photo:hover .tc-bg{transform:scale(1.05)}
-.tc-photo .tc-top{position:absolute;top:24px;left:28px;right:28px;margin:0}
-.tc-photo h3,.tc-photo p{text-shadow:0 1px 12px rgba(0,0,0,.6)}
-.tc-photo h3{color:#fff}
-.tc-photo p{color:#dfe5ea}
-.tc-photo .tc-n{background:rgba(10,14,18,.7);padding:4px 9px;border-radius:3px;border:1px solid rgba(255,255,255,.14)}
-.tc-photo .tc-ic{background:rgba(10,14,18,.6);backdrop-filter:blur(6px)}
-.tc-photo .tc-dev{margin-top:4px;border-top-color:rgba(255,255,255,.18)}
-.tc-photo .tc-dev small{color:#c5ccd3}
-@media (max-width:860px){.tc-photo{min-height:360px}.tc-photo .tc-top{left:20px;right:20px;top:18px}}
+/* test card with photo on top */
+.tc-photo{overflow:hidden;border-color:rgba(240,180,0,.3);padding-top:0;min-height:0}
+.tc-photo .tc-bg{display:block;max-width:none;flex-shrink:0;width:calc(100% + 56px);margin:0 -28px 6px;aspect-ratio:16/9;height:auto;object-fit:cover;object-position:50% 70%;transition:transform 1.2s var(--ease);border-bottom:1px solid rgba(255,255,255,.08)}
+.tc-photo:hover .tc-bg{transform:scale(1.03)}
+.tc-photo .tc-top{position:absolute;top:16px;left:16px;right:16px;margin:0;z-index:1}
+.tc-photo .tc-n{background:rgba(10,14,18,.75);padding:4px 9px;border-radius:3px;border:1px solid rgba(255,255,255,.14)}
+.tc-photo .tc-ic{background:rgba(10,14,18,.65);backdrop-filter:blur(6px)}
+@media (max-width:860px){.tc-photo .tc-bg{width:calc(100% + 40px);margin:0 -20px 6px}.tc-photo .tc-top{left:12px;right:12px;top:12px}}

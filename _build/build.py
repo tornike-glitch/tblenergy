@@ -373,7 +373,7 @@ contact += f'''<section class="sec ct-sec"><div class="wrap">
     </a>
   </div>
   <div class="ct-brief">
-    <div class="ct-brief-h"><p class="eyebrow">{t('ზარისთვის მოემზადეთ','Before you call')}</p><h2 class="h-md">{t('რაც უფრო ზუსტად აღგვიწერთ, მით უფრო სწრაფად გიპასუხებთ','The more you tell us, the faster we can help')}</h2></div>
+    <div class="ct-brief-h"><p class="eyebrow">{t('როგორ მივიღოთ შეკვეთა','How to place an order')}</p><h2 class="h-md">{t('დარეკვისას გვითხარით','When you call, tell us')}</h2></div>
     <ol class="ct-steps">
       <li><span class="mono">01</span><div><b>{t('ობიექტის ტიპი','Type of site')}</b><small>{t('ბინა, სახლი, ოფისი, საწარმო ან კლინიკა','Apartment, house, office, plant or clinic')}</small></div></li>
       <li><span class="mono">02</span><div><b>{t('რა გჭირდებათ','What you need')}</b><small>{t('მონტაჟი, ფარი, რემონტი ან გაზომვა','Installation, panel, repair or testing')}</small></div></li>

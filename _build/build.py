@@ -8,6 +8,7 @@ import os as _o
 OUT = _o.path.dirname(_o.path.dirname(_o.path.abspath(__file__)))
 PHONE = '+995 500 05 58 59'
 TEL = 'tel:+995500055859'
+EMAIL = 'info@tblenergy.ge'
 FB = 'https://www.facebook.com/tblenergy.ge'
 MSG = 'https://m.me/tblenergy.ge'
 
@@ -20,6 +21,7 @@ ICON = {
  'msg': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.4 2 2 6.1 2 11.4c0 3 1.5 5.7 3.8 7.4V22l3.5-1.9c.9.3 1.8.4 2.7.4 5.6 0 10-4.1 10-9.4S17.6 2 12 2zm1 12.6-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg>',
  'fb': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>',
  'cam': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>',
+ 'mail': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>',
  'x': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
  'l': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
  'r': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
@@ -104,6 +106,7 @@ def footer():
       <h4>{t('კონტაქტი','Contact')}</h4>
       <ul>
         <li><a class="mono" href="{TEL}">{PHONE}</a></li>
+        <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
         <li><a href="{MSG}">Messenger</a></li>
         <li><a href="{FB}">Facebook</a></li>
       </ul>
@@ -370,6 +373,13 @@ contact += f'''<section class="sec ct-sec"><div class="wrap">
       <b>TBL Energy</b>
       <span class="ct-sub">{t('ჩვენი ნამუშევრები და სიახლეები.','Our work and news.')}</span>
       <span class="ct-btn">{t('გვერდის ნახვა','Visit page')}{ICON['arrow']}</span>
+    </a>
+    <a class="ct-card ct-mail" href="mailto:{EMAIL}">
+      <span class="ct-ic">{ICON['mail']}</span>
+      <span class="ct-k">{t('ელ-ფოსტა','Email')}</span>
+      <b class="ct-em">{EMAIL}</b>
+      <span class="ct-sub">{t('შეთავაზებები, ტენდერები და დოკუმენტები.','Quotes, tenders and documents.')}</span>
+      <span class="ct-btn">{t('მოგვწერეთ','Write to us')}{ICON['arrow']}</span>
     </a>
   </div>
   <div class="ct-brief">

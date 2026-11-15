@@ -200,7 +200,7 @@ def jsonld():
     import json
     biz = {
       "@context": "https://schema.org", "@type": "Electrician", "name": "TBL Energy",
-      "telephone": "+995500055859", "areaServed": {"@type": "City", "name": "Tbilisi"},
+      "telephone": "+995500055859", "email": "info@tblenergy.ge", "areaServed": {"@type": "City", "name": "Tbilisi"},
       "address": {"@type": "PostalAddress", "addressLocality": "Tbilisi", "addressCountry": "GE"},
       "description": "ელექტრიკი თბილისში: გამოძახებით და ავარიული ელექტრიკი, ელექტრო გამანაწილებელი ფარები, დაზიანებული გაყვანილობის ძებნა და რემონტი, გენერატორები და UPS, მაღალი ძაბვის სამუშაოები, დამიწება და კონტურების გაზომვა.",
       "knowsAbout": [s['ka'] for s in SERVICES],

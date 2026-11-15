@@ -152,6 +152,7 @@ html[data-theme="light"] .ct-btn{color:var(--amber-text)}
 html[data-theme="light"] .ct-steps li{background:rgba(21,26,32,0.034);border:1px solid rgba(21,26,32,0.081)}
 html[data-theme="light"] .ct-steps .mono{color:var(--amber-text)}
 html[data-theme="light"] .ct-steps b{color:#151a20}
+html[data-theme="light"] .ct-mail .ct-ic{background:#f0b400;border:0;color:#111}
 html[data-theme="light"] .ct-call{background:linear-gradient(150deg,#f5bd1a,#e2a600);border-color:transparent}
 html[data-theme="light"] .ct-call b,html[data-theme="light"] .ct-call .ct-btn{color:#111}
 html[data-theme="light"] .ct-call .ct-k,html[data-theme="light"] .ct-call .ct-sub{color:#3b3205}

@@ -12,7 +12,7 @@ SRC = os.path.join(ROOT, 'assets', 'style.css')
 OUT = os.path.join(ROOT, 'assets', 'light.css')
 
 # selectors that live on photos / dark illustration panels: keep as they are
-EXCLUDE = ['.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
+EXCLUDE = ['.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
            '.qf-tag', '.sd-tag', 'figcaption', '.lcd', '.report .doc', '.light', '.cta', '.ph-body',
            '.ph-screen', '.ph-brand', '.ph-num', '.ph-call', '.ph-icon', '.bub', '.plan', '.dim', '.db',
            '.chip', '.encl', '.rail', '.wires', '.bk', '.tg ', '.tool', '.sheet', '.hr', '.rl', '.pass',
@@ -20,7 +20,8 @@ EXCLUDE = ['.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.tc-photo .tc-n', '.t
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .ct-call{background:linear-gradient(150deg,#f5bd1a,#e2a600);border-color:transparent}
+TUNE = '''html[data-theme="light"] .ct-mail .ct-ic{background:#f0b400;border:0;color:#111}
+html[data-theme="light"] .ct-call{background:linear-gradient(150deg,#f5bd1a,#e2a600);border-color:transparent}
 html[data-theme="light"] .ct-call b,html[data-theme="light"] .ct-call .ct-btn{color:#111}
 html[data-theme="light"] .ct-call .ct-k,html[data-theme="light"] .ct-call .ct-sub{color:#3b3205}
 html[data-theme="light"] .ct-call .ct-ic{background:#111;border-color:#111}

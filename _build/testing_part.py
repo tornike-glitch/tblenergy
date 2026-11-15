@@ -66,7 +66,7 @@ def build_tests(t):
         devs = ''.join(f'<span>{x}</span>' for x in d['dev'])
         devblock = f'<div class="tc-dev"><small>{t("აპარატურა","Instruments")}</small>{devs}</div>' if d['dev'] else ''
         bg = ''
-        bgimg = f'<img class="tc-bg" src="{d["bg"]}" alt="" loading="lazy" decoding="async">' if d.get('bg') else ''
+        bgimg = f'<img class="tc-bg" src="{d["bg"]}" alt="{d['ka']}{(' – ' + d['dev'][0]) if d['dev'] else ''}" loading="lazy" decoding="async">' if d.get('bg') else ''
         out += (f'<article class="tc{" tc-wide" if d.get("wide") else ""}{" tc-photo" if d.get("bg") else ""}"{bg}>'
                 f'{bgimg}<div class="tc-top"><span class="tc-n mono">{i+1:02d}</span>'
                 f'<span class="tc-ic"><svg viewBox="0 0 24 24" aria-hidden="true">{IC[d["ic"]]}</svg></span></div>'

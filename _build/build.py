@@ -37,7 +37,9 @@ NAV = [
 
 LOGO = '''<svg class="brand-mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="boltd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd75e"/><stop offset="1" stop-color="#f0b400"/></linearGradient><linearGradient id="shd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d6f99"/><stop offset="1" stop-color="#6fa8d6"/></linearGradient></defs><path d="M60 9 Q80 11 100 19 V58 Q100 92 60 112 Q20 92 20 58 V19 Q40 11 60 9 Z" fill="none" stroke="url(#shd)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path fill="#eef1f4" d="M6 38 H54 V48 H6 Z"/><path fill="#eef1f4" fill-rule="evenodd" transform="translate(58,0) scale(0.68,1) translate(-14,0)" d="M14 38 H41 C51 38 56 44 56 51 C56 56 53.5 59.5 49.5 61.5 C55 63.5 58 68.5 58 75 C58 84 52 90 42 90 H14 Z M27 47 V57.5 H39.5 C43.5 57.5 45.5 55.5 45.5 52.2 C45.5 49 43.5 47 39.5 47 Z M27 66.5 V81 H40.5 C44.5 81 47 78.5 47 73.8 C47 69.2 44.5 66.5 40.5 66.5 Z"/><path fill="#eef1f4" d="M91 38 H101 V80 H114 V90 H91 Z"/><path d="M44 3 L18 64 H31 L21 117 L49 52 H36 Z" fill="url(#boltd)" stroke="#0d1116" stroke-width="4" stroke-linejoin="round" paint-order="stroke"/><g stroke="#141414" stroke-width="2.2" fill="none" stroke-linecap="round"><path d="M30 56 H38 L35 66"/></g><g fill="#ffd75e" stroke="#141414" stroke-width="2"><circle cx="30" cy="56" r="2.6"/><circle cx="38" cy="56" r="2.6"/><circle cx="35" cy="66" r="2.6"/></g></svg>'''
 
-def head(title, desc, extra=''):
+SITE = 'https://tblenergy.ge/'
+
+def head(title, desc, extra='', page='index.html'):
     return f'''<!DOCTYPE html>
 <html lang="ka" data-lang="ka">
 <head>
@@ -45,6 +47,20 @@ def head(title, desc, extra=''):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<link rel="canonical" href="{SITE}{'' if page=='index.html' else page}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0d1116">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TBL Energy">
+<meta property="og:locale" content="ka_GE">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{SITE}{'' if page=='index.html' else page}">
+<meta property="og:image" content="{SITE}img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Georgian:wght@300..700&family=Noto+Sans:wght@300..700&display=swap" rel="stylesheet">
@@ -151,7 +167,7 @@ def page_header(crumb_ka, crumb_en, h1, lead, img, anchors=''):
 
 def write(name, title, desc, body, extra=''):
     with open(os.path.join(OUT, name), 'w') as f:
-        f.write(head(title, desc, extra) + header(name) + body + footer())
+        f.write(head(title, desc, extra, name) + header(name) + body + footer())
 
 # ---------------- HOME ----------------
 board = build_board(t, ICON)
@@ -315,7 +331,7 @@ medical += f'''<section class="sec light"><div class="wrap">
   </div>
 </div></section>
 ''' + cta()
-write('medical.html', 'სამედიცინო აუდიტი · TBL Energy', 'სამედიცინო აპარატურის ელექტროუსაფრთხოების ტესტირება IEC 60601-1 და NFPA 99.', medical)
+write('medical.html', 'სამედიცინო აპარატურის ელექტროუსაფრთხოება · IEC 60601-1 | TBL Energy', 'სამედიცინო აპარატურის ელექტროუსაფრთხოების ტესტირება IEC 60601-1 და NFPA 99.', medical)
 
 # ---------------- PROJECTS ----------------
 works = [
@@ -345,7 +361,7 @@ projects += f'''<section class="sec"><div class="wrap">
   {build_projects(t, ICON, big=True)}
 </div></section>
 ''' + cta()
-write('projects.html', 'პროექტები · TBL Energy', 'TBL Energy-ს ნამუშევრები: გაყვანილობა და ფარები.', projects)
+write('projects.html', 'ნამუშევრები · ელექტროგაყვანილობა და ფარები თბილისში | TBL Energy', 'TBL Energy-ის დასრულებული პროექტები: ბინებისა და სახლების ელექტროგაყვანილობა, საცხოვრებელი და სამრეწველო ფარები. ფოტოები თითოეული ობიექტიდან.', projects)
 
 # ---------------- CONTACT ----------------
 contact = page_header('კონტაქტი','Contact', t('დაგვიკავშირდით','Get in touch'),

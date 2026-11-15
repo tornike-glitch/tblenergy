@@ -12,7 +12,7 @@ SRC = os.path.join(ROOT, 'assets', 'style.css')
 OUT = os.path.join(ROOT, 'assets', 'light.css')
 
 # selectors that live on photos / dark illustration panels: keep as they are
-EXCLUDE = ['.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
+EXCLUDE = ['.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
            '.qf-tag', '.sd-tag', 'figcaption', '.lcd', '.report .doc', '.light', '.cta', '.ph-body',
            '.ph-screen', '.ph-brand', '.ph-num', '.ph-call', '.ph-icon', '.bub', '.plan', '.dim', '.db',
            '.chip', '.encl', '.rail', '.wires', '.bk', '.tg ', '.tool', '.sheet', '.hr', '.rl', '.pass',
@@ -20,7 +20,20 @@ EXCLUDE = ['.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb',
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .tc-photo .tc-ic{background:rgba(10,14,18,.65);border-color:rgba(240,180,0,.35)}
+TUNE = '''html[data-theme="light"] .ct-call{background:linear-gradient(150deg,#f5bd1a,#e2a600);border-color:transparent}
+html[data-theme="light"] .ct-call b,html[data-theme="light"] .ct-call .ct-btn{color:#111}
+html[data-theme="light"] .ct-call .ct-k,html[data-theme="light"] .ct-call .ct-sub{color:#3b3205}
+html[data-theme="light"] .ct-call .ct-ic{background:#111;border-color:#111}
+html[data-theme="light"] .ct-msg .ct-ic{background:linear-gradient(135deg,#00b2ff,#006aff 45%,#a033ff 80%,#ff5c87);border:0}
+html[data-theme="light"] .ct-fb .ct-ic{background:#1877f2;border:0}
+html[data-theme="light"] .ct-msg .ct-ic svg,html[data-theme="light"] .ct-fb .ct-ic svg{fill:#fff;color:#fff}
+html[data-theme="light"] .ct-card:not(.ct-call){background:#fff;border-color:rgba(15,20,26,.12);box-shadow:0 1px 2px rgba(15,20,26,.04),0 8px 24px -16px rgba(15,20,26,.18)}
+html[data-theme="light"] .ct-card:not(.ct-call) b{color:#0f141a}
+html[data-theme="light"] .ct-card:not(.ct-call) .ct-sub{color:#2e3640}
+html[data-theme="light"] .ct-card:not(.ct-call) .ct-btn{color:#9a6f00}
+html[data-theme="light"] .ct-steps li{background:#fff;border-color:rgba(15,20,26,.1)}
+html[data-theme="light"] .ct-steps b{color:#0f141a}
+html[data-theme="light"] .tc-photo .tc-ic{background:rgba(10,14,18,.65);border-color:rgba(240,180,0,.35)}
 html[data-theme="light"] .tc-photo .tc-ic svg{stroke:#f0b400}
 html[data-theme="light"] .tc-photo .tc-n{color:#f0b400}
 /* readability tuning */

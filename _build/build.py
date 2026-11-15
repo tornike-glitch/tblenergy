@@ -348,17 +348,37 @@ write('projects.html', 'პროექტები · TBL Energy', 'TBL Energy-
 contact = page_header('კონტაქტი','Contact', t('დაგვიკავშირდით','Get in touch'),
   t('ყველაზე სწრაფი გზაა ზარი. შეგიძლიათ მოგვწეროთ Messenger-შიც.','The fastest way is a phone call. You can also message us on Messenger.'),
   'panel-wall.jpg')
-contact += f'''<section class="sec light"><div class="wrap contact-grid">
-  <div class="contact-main">
-    <p class="eyebrow">{t('ტელეფონი','Phone')}</p>
-    <a class="big-phone" href="{TEL}">{PHONE}</a>
-    <p class="lead">{t('ზარისას გვითხარით:','When you call, tell us:')}</p>
-    {checks([('ობიექტის ტიპი: ბინა, სახლი, ოფისი, საწარმო ან კლინიკა','Type of site: apartment, house, office, plant or clinic'),('რა გჭირდებათ: მონტაჟი, ფარი, რემონტი ან გაზომვა','What you need: installation, panel, repair or testing'),('სასურველი ვადა','Preferred timing')])}
+contact += f'''<section class="sec ct-sec"><div class="wrap">
+  <div class="ct-grid">
+    <a class="ct-card ct-call" href="{TEL}">
+      <span class="ct-ic">{ICON['phone']}</span>
+      <span class="ct-k">{t('დარეკეთ','Call us')}</span>
+      <b class="ct-num mono">{PHONE}</b>
+      <span class="ct-sub">{t('ყველაზე სწრაფი გზა. ავარიულ შემთხვევაში დაუყოვნებლივ.','The fastest way. Immediately in an emergency.')}</span>
+      <span class="ct-btn">{t('დარეკვა','Call now')}{ICON['arrow']}</span>
+    </a>
+    <a class="ct-card ct-msg" href="{MSG}" target="_blank" rel="noopener">
+      <span class="ct-ic">{ICON['msg']}</span>
+      <span class="ct-k">Messenger</span>
+      <b>{t('მოგვწერეთ','Message us')}</b>
+      <span class="ct-sub">{t('გამოგვიგზავნეთ ფოტო ან აღწერა და გიპასუხებთ.','Send a photo or description and we will reply.')}</span>
+      <span class="ct-btn">{t('ჩატის გახსნა','Open chat')}{ICON['arrow']}</span>
+    </a>
+    <a class="ct-card ct-fb" href="{FB}" target="_blank" rel="noopener">
+      <span class="ct-ic">{ICON['fb']}</span>
+      <span class="ct-k">Facebook</span>
+      <b>TBL Energy</b>
+      <span class="ct-sub">{t('ჩვენი ნამუშევრები და სიახლეები.','Our work and news.')}</span>
+      <span class="ct-btn">{t('გვერდის ნახვა','Visit page')}{ICON['arrow']}</span>
+    </a>
   </div>
-  <div class="channels">
-    <a href="{TEL}"><span class="ic">{ICON['phone']}</span><span><b>{t('დარეკვა','Call')}</b><small class="mono">{PHONE}</small></span>{ICON['arrow']}</a>
-    <a href="{MSG}"><span class="ic">{ICON['msg']}</span><span><b>Messenger</b><small>{t('მოგვწერეთ შეტყობინება','Send us a message')}</small></span>{ICON['arrow']}</a>
-    <a href="{FB}"><span class="ic">{ICON['fb']}</span><span><b>Facebook</b><small>{t('ჩვენი გვერდი','Our page')}</small></span>{ICON['arrow']}</a>
+  <div class="ct-brief">
+    <div class="ct-brief-h"><p class="eyebrow">{t('ზარისთვის მოემზადეთ','Before you call')}</p><h2 class="h-md">{t('რაც უფრო ზუსტად აღგვიწერთ, მით უფრო სწრაფად გიპასუხებთ','The more you tell us, the faster we can help')}</h2></div>
+    <ol class="ct-steps">
+      <li><span class="mono">01</span><div><b>{t('ობიექტის ტიპი','Type of site')}</b><small>{t('ბინა, სახლი, ოფისი, საწარმო ან კლინიკა','Apartment, house, office, plant or clinic')}</small></div></li>
+      <li><span class="mono">02</span><div><b>{t('რა გჭირდებათ','What you need')}</b><small>{t('მონტაჟი, ფარი, რემონტი ან გაზომვა','Installation, panel, repair or testing')}</small></div></li>
+      <li><span class="mono">03</span><div><b>{t('სასურველი ვადა','Preferred timing')}</b><small>{t('როდის გჭირდებათ სამუშაოს დაწყება','When the work should start')}</small></div></li>
+    </ol>
   </div>
 </div></section>
 '''

@@ -27,7 +27,7 @@ TESTS = [
       dka='კაბელების იზოლაციის შემოწმება, PI პოლარიზაციის ინდექსისა და DAR დიელექტრიკული შთანთქმის კოეფიციენტის ავტომატური გამოთვლა.',
       den='Cable insulation testing with automatic calculation of the polarization index (PI) and dielectric absorption ratio (DAR).',
       dev=['Fluke 1550C', 'Fluke 1587FC']),
- dict(ic='motor', ka='ძრავებისა და მძიმე სამრეწველო დანადგარების დიაგნოსტიკა', en='Motor and heavy industrial equipment diagnostics',
+ dict(ic='motor', bg='img/test-motors.jpg', ka='ძრავებისა და მძიმე სამრეწველო დანადგარების დიაგნოსტიკა', en='Motor and heavy industrial equipment diagnostics',
       dka='ელექტროძრავების, ტრანსფორმატორების, გენერატორებისა და მართვის ფარების ძაბვით ტესტირება და ექსპლუატაციაში შეყვანა.',
       den='Voltage testing and commissioning of electric motors, transformers, generators and control panels.',
       dev=['Fluke 1550C']),

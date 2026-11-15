@@ -1,5 +1,6 @@
 import os
 from process_part import build_process
+from testing_part import build_tests
 from projects_part import build_projects
 from services_part import build_services_body, build_board, footer_services, build_faq, jsonld
 import os as _o
@@ -234,11 +235,11 @@ trs = ''.join(f'<tr><td>{t(a,b)}</td><td class="dev">{"".join(f"<span>{d}</span>
 testing = page_header('გაზომვები და აუდიტი','Testing & audit', t('გაზომვები, ელექტროაუდიტი და ოფიციალური დასკვნები','Testing, electrical audits and official reports'),
   t('კომერციული და საცხოვრებელი ობიექტებისთვის. ვიყენებთ Fluke-ის დაკალიბრებულ აპარატურას და შედეგებს გადმოგცემთ დოკუმენტად.','For commercial and residential properties. We use calibrated Fluke instruments and deliver results as a document.'),
   'fluke-meters.jpg')
-testing += f'''<section class="sec light"><div class="wrap">
+testing += f'''<section class="sec tests-sec"><div class="wrap">
   <div class="sec-head"><div><p class="eyebrow">{t('სერვისების ჩამონათვალი','Service list')}</p><h2 class="h-lg">{t('რას ვზომავთ','What we test')}</h2></div></div>
-  <ol class="tests">{tl}</ol>
+  {build_tests(t)}
 </div></section>
-<section class="sec light alt"><div class="wrap">
+<section class="sec instr-sec"><div class="wrap">
   <div class="sec-head"><div><p class="eyebrow">{t('აპარატურა','Instruments')}</p><h2 class="h-lg">{t('სერვისი, აპარატურა და სამუშაოს შინაარსი','Service, instrument and scope')}</h2></div></div>
   <div class="tbl"><table>
     <thead><tr><th scope="col">{t('სერვისი','Service')}</th><th scope="col">{t('აპარატურა','Instrument')}</th><th scope="col">{t('სამუშაოს შინაარსი','Scope of work')}</th></tr></thead>

@@ -50,7 +50,7 @@ TESTS = [
       dka='ფარებისა და ძალოვანი კვანძების გადახურების წერტილების გამოვლენა თერმოკამერით. დასკვნა დოკუმენტირებული თერმული ფოტოებით.',
       den='Detecting hot spots in panels and power connections with a thermal camera. Report documented with thermal images.',
       dev=['Fluke Ti10']),
- dict(ic='wave', ka='უკონტაქტო გაზომვები', en='Non-contact measurements',
+ dict(ic='wave', bg='img/test-noncontact.jpg', ka='უკონტაქტო გაზომვები', en='Non-contact measurements',
       dka='გაზომვები დანადგარის გაჩერებისა და ქსელის გათიშვის გარეშე. სამუშაო პროცესი არ ჩერდება.',
       den='Measurements without stopping equipment or switching off the network, so operations keep running.',
       dev=[]),

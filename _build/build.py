@@ -8,8 +8,8 @@ import os as _o
 OUT = _o.path.dirname(_o.path.dirname(_o.path.abspath(__file__)))
 PHONE = '+995 500 05 58 59'
 TEL = 'tel:+995500055859'
-FB = 'https://www.facebook.com/profile.php?id=1332492646622006'
-MSG = 'https://m.me/1332492646622006'
+FB = 'https://www.facebook.com/tblenergy.ge'
+MSG = 'https://m.me/tblenergy.ge'
 
 def t(ka, en):
     return f'<span data-l="ka">{ka}</span><span data-l="en">{en}</span>'

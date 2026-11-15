@@ -1085,3 +1085,5 @@ html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}
   .tc-wide.tc-photo p{grid-column:2;grid-row:2}
   .tc-wide.tc-photo .tc-dev{grid-column:2;grid-row:4;margin-bottom:28px}
 }
+@media (min-width:861px){.tc-wide.tc-photo .tc-chips{grid-column:2;grid-row:3}.tc-wide.tc-photo .tc-chips li{font-size:12.5px;padding:5px 10px}}
+@media (max-width:640px){.tc-chips{gap:6px}.tc-chips li{font-size:12.5px;padding:5px 10px}}

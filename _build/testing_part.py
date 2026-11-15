@@ -39,7 +39,7 @@ TESTS = [
       dka='ფაზა-ნულის სრული წინაღობის გაზომვა, მოკლე ჩართვის სავარაუდო დენების (PFC/PSC) გამოთვლა, დიფერენციალური ავტომატების (RCD/FI) ტესტირება ამოქმედების დროსა და დენზე, წრედის უწყვეტობის გაზომვა.',
       den='Line–neutral loop impedance, prospective fault current (PFC/PSC) calculation, RCD/FI testing of trip time and trip current, circuit continuity measurement.',
       dev=['Fluke 1653B']),
- dict(ic='med', wide=True, ka='სამედიცინო დანადგარების ელექტროუსაფრთხოების გაზომვა', en='Electrical safety testing of medical equipment',
+ dict(ic='med', wide=True, bg='img/test-medical.jpg', ka='სამედიცინო დანადგარების ელექტროუსაფრთხოების გაზომვა', en='Electrical safety testing of medical equipment',
       dka='გაზომვები ელექტროუსაფრთხოების სტანდარტების მიხედვით: ANSI/AAMI ES1, NFPA 99, IEC 62353 და IEC 60601-1.',
       den='Measurements to electrical safety standards ANSI/AAMI ES1, NFPA 99, IEC 62353 and IEC 60601-1.',
       dev=['Fluke Biomedical ESA609'],

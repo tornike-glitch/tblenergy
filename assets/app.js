@@ -287,3 +287,13 @@
     w.classList.toggle('open',open);b.setAttribute('aria-expanded',open?'true':'false');
   });
 })();
+
+/* certificate viewer */
+(function(){
+  var o=document.getElementById('cred-open'),lb=document.getElementById('cred-lb');if(!o||!lb)return;
+  function close(){lb.hidden=true;document.body.style.overflow='';o.focus()}
+  o.addEventListener('click',function(){lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('cred-x').focus()});
+  document.getElementById('cred-x').addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('plb-stage'))close()});
+  document.addEventListener('keydown',function(e){if(!lb.hidden&&e.key==='Escape')close()});
+})();

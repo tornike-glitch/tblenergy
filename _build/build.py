@@ -1,6 +1,7 @@
 import os
 from process_part import build_process
 from testing_part import build_tests
+from about_part import build_about
 from projects_part import build_projects
 from services_part import build_services_body, build_board, footer_services, build_faq, jsonld
 import os as _o
@@ -177,6 +178,7 @@ home = f'''<section class="hero hero-ph">
 <div class="bus" aria-hidden="true"></div>
 <div class="wrap">
   <div class="facts facts-c">
+    <div class="fv"><span class="fv-b mono">V</span><b>{t('ელექტროუსაფრთხოების უმაღლესი, V ჯგუფი','Highest electrical safety group V')}</b></div>
     <div><svg class="flag" viewBox="0 0 48 32" role="img" aria-label="EU"><rect width="48" height="32" fill="#003399"/><g fill="#FFCC00"><polygon points="24.00,3.56 24.40,4.78 25.69,4.78 24.65,5.54 25.04,6.77 24.00,6.01 22.96,6.77 23.35,5.54 22.31,4.78 23.60,4.78"/><polygon points="29.33,4.98 29.73,6.21 31.02,6.21 29.98,6.97 30.38,8.20 29.33,7.44 28.29,8.20 28.69,6.97 27.64,6.21 28.93,6.21"/><polygon points="33.24,8.89 33.64,10.12 34.93,10.12 33.88,10.88 34.28,12.10 33.24,11.35 32.19,12.10 32.59,10.88 31.55,10.12 32.84,10.12"/><polygon points="34.67,14.22 35.07,15.45 36.36,15.45 35.31,16.21 35.71,17.44 34.67,16.68 33.62,17.44 34.02,16.21 32.98,15.45 34.27,15.45"/><polygon points="33.24,19.56 33.64,20.78 34.93,20.78 33.88,21.54 34.28,22.77 33.24,22.01 32.19,22.77 32.59,21.54 31.55,20.78 32.84,20.78"/><polygon points="29.33,23.46 29.73,24.69 31.02,24.69 29.98,25.45 30.38,26.68 29.33,25.92 28.29,26.68 28.69,25.45 27.64,24.69 28.93,24.69"/><polygon points="24.00,24.89 24.40,26.12 25.69,26.12 24.65,26.88 25.04,28.10 24.00,27.35 22.96,28.10 23.35,26.88 22.31,26.12 23.60,26.12"/><polygon points="18.67,23.46 19.07,24.69 20.36,24.69 19.31,25.45 19.71,26.68 18.67,25.92 17.62,26.68 18.02,25.45 16.98,24.69 18.27,24.69"/><polygon points="14.76,19.56 15.16,20.78 16.45,20.78 15.41,21.54 15.81,22.77 14.76,22.01 13.72,22.77 14.12,21.54 13.07,20.78 14.36,20.78"/><polygon points="13.33,14.22 13.73,15.45 15.02,15.45 13.98,16.21 14.38,17.44 13.33,16.68 12.29,17.44 12.69,16.21 11.64,15.45 12.93,15.45"/><polygon points="14.76,8.89 15.16,10.12 16.45,10.12 15.41,10.88 15.81,12.10 14.76,11.35 13.72,12.10 14.12,10.88 13.07,10.12 14.36,10.12"/><polygon points="18.67,4.98 19.07,6.21 20.36,6.21 19.31,6.97 19.71,8.20 18.67,7.44 17.62,8.20 18.02,6.97 16.98,6.21 18.27,6.21"/></g></svg><b>{t('ევროპული სტანდარტები','European standards')}</b></div>
     <div><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="3" width="16" height="26" rx="3"/><rect x="11" y="6" width="10" height="7"/><circle cx="16" cy="21" r="3.5"/></svg><b>{t('ქსელის შემოწმება Fluke-ის სერტიფიცირებული ხელსაწყოებით','Network testing with certified Fluke instruments')}</b></div>
     <div><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="5" width="24" height="22" rx="1.5"/><path d="M4 11h24M10 11v16M10 19h18M18 11v8M22 19v8"/><circle cx="14" cy="15" r="1.2"/><circle cx="24" cy="23" r="1.2"/></svg><b>{t('ელექტრო დაგეგმარების ნახაზი','Electrical layout drawing')}</b></div>
@@ -195,7 +197,7 @@ home = f'''<section class="hero hero-ph">
   </div>
 </section>
 
-''' + build_process(t, ICON) + f'''
+''' + build_process(t, ICON) + build_about(t, ICON) + f'''
 
 <section class="sec">
   <div class="wrap">

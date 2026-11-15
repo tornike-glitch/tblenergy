@@ -7,6 +7,8 @@ IC = {
  'motor': '<circle cx="11" cy="12" r="7"/><circle cx="11" cy="12" r="2.5"/><path d="M18 12h3M11 5V3M11 21v-2"/>',
  'med':   '<path d="M3 12h4l2-4 3 8 2-4h7"/><path d="M17 4v4M15 6h4"/>',
  'gauge': '<path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1.4"/><path d="M8 20h8"/>',
+ 'thermo': '<path d="M10 14.5V5a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0z"/><path d="M12 11v6"/><path d="M17 6h3M17 9h2"/>',
+ 'wave':  '<circle cx="12" cy="12" r="1.6"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8"/>',
  'panel': '<rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 8h8M8 14h8M9 6v4M12 6v4M15 6v4M9 12v4M12 12v4M15 12v4"/>',
 }
 
@@ -44,6 +46,15 @@ TESTS = [
       den='Measurements to electrical safety standards ANSI/AAMI ES1, NFPA 99, IEC 62353 and IEC 60601-1.',
       dev=['Fluke Biomedical ESA609'],
       chips=[('ეკგ (EKG) აპარატები და პაციენტის მონიტორები','ECG machines and patient monitors'),('ულტრაბგერითი დიაგნოსტიკა','Ultrasound systems'),('პულსოქსიმეტრები','Pulse oximeters'),('ენცეფალოგრაფები (EEG)','EEG machines'),('პორტატული რენტგენი და ექოსკოპია','Portable X-ray and echo systems'),('ფილტვის ხელოვნური ვენტილაცია','Ventilators'),('ინფუზიური და შპრიცის ტუმბოები','Infusion and syringe pumps'),('დეფიბრილატორები','Defibrillators'),('ჰემოდიალიზის აპარატები','Hemodialysis machines'),('ელექტროქირურგიული აპარატები','Electrosurgical units'),('საოპერაციო მაგიდები და ფუნქციური საწოლები','Operating tables and functional beds'),('სამედიცინო და საოპერაციო განათება','Medical and surgical lighting'),('პაციენტის გამათბობელი/გამაგრილებელი სისტემები','Patient warming/cooling systems')]),
+ dict(ic='thermo', ka='ოფიციალური თერმოგრაფიული დასკვნები', en='Official thermography reports',
+      dka='ფარებისა და ძალოვანი კვანძების გადახურების წერტილების გამოვლენა თერმოკამერით. დასკვნა დოკუმენტირებული თერმული ფოტოებით.',
+      den='Detecting hot spots in panels and power connections with a thermal camera. Report documented with thermal images.',
+      dev=['Fluke Ti10']),
+ dict(ic='wave', ka='უკონტაქტო გაზომვები', en='Non-contact measurements',
+      dka='გაზომვები დანადგარის გაჩერებისა და ქსელის გათიშვის გარეშე. სამუშაო პროცესი არ ჩერდება.',
+      den='Measurements without stopping equipment or switching off the network, so operations keep running.',
+      dev=[]),
+
 ]
 
 def build_tests(t):
@@ -53,11 +64,12 @@ def build_tests(t):
         if d.get('chips'):
             chips = '<ul class="tc-chips">' + ''.join(f'<li>{t(a,b)}</li>' for a,b in d['chips']) + '</ul>'
         devs = ''.join(f'<span>{x}</span>' for x in d['dev'])
+        devblock = f'<div class="tc-dev"><small>{t("აპარატურა","Instruments")}</small>{devs}</div>' if d['dev'] else ''
         bg = ''
         bgimg = f'<img class="tc-bg" src="{d["bg"]}" alt="" loading="lazy" decoding="async">' if d.get('bg') else ''
         out += (f'<article class="tc{" tc-wide" if d.get("wide") else ""}{" tc-photo" if d.get("bg") else ""}"{bg}>'
                 f'{bgimg}<div class="tc-top"><span class="tc-n mono">{i+1:02d}</span>'
                 f'<span class="tc-ic"><svg viewBox="0 0 24 24" aria-hidden="true">{IC[d["ic"]]}</svg></span></div>'
                 f'<h3>{t(d["ka"], d["en"])}</h3><p>{t(d["dka"], d["den"])}</p>{chips}'
-                f'<div class="tc-dev"><small>{t("აპარატურა","Instruments")}</small>{devs}</div></article>')
+                f'{devblock}</article>')
     return f'<div class="tcs">{out}</div>'

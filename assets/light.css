@@ -1,8 +1,8 @@
 html[data-theme="light"]{
-  --night:#f6f5f1;
-  --night-2:#ecebe6;
-  --snow:#151a20;
-  --fog:#5d6771;
+  --night:#f7f7f5;
+  --night-2:#efeeea;
+  --snow:#0f141a;
+  --fog:#4a545e;
   --hair-d:rgba(21,26,32,.11);
   --amber-text:#9a6f00;
   color-scheme:light;
@@ -116,3 +116,25 @@ html[data-theme="light"] .pstep .pn{color:var(--amber-text)}
 }
 html[data-theme="light"] .theme-t:hover{color:var(--amber-text)}
 html[data-theme="light"] html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#191e23}
+/* readability tuning */
+html[data-theme="light"] canvas.circuit{opacity:.28;filter:saturate(.6)}
+html[data-theme="light"] .ph-bg::after{background:linear-gradient(90deg,var(--night) 35%,rgba(247,247,245,.85) 70%,rgba(247,247,245,.6) 100%)}
+html[data-theme="light"] .hero-ph::before{background:linear-gradient(90deg,var(--night) 0%,rgba(247,247,245,.96) 40%,rgba(247,247,245,.5) 60%,rgba(247,247,245,0) 75%)}
+html[data-theme="light"] h1,html[data-theme="light"] h2,html[data-theme="light"] h3{color:#0f141a}
+html[data-theme="light"] .lead,html[data-theme="light"] .tc p,html[data-theme="light"] .sd-body .lead,html[data-theme="light"] .mod p,html[data-theme="light"] .faq-i p,html[data-theme="light"] .pd{color:#2e3640}
+html[data-theme="light"] .eyebrow,html[data-theme="light"] .crumbs{color:#3d4650}
+html[data-theme="light"] .site-header{background:rgba(255,255,255,.96);box-shadow:0 1px 0 rgba(15,20,26,.08)}
+html[data-theme="light"] .nav a{color:#2e3640}
+html[data-theme="light"] .nav a:hover,html[data-theme="light"] .nav a[aria-current="page"]{color:#0f141a}
+html[data-theme="light"] .tc,html[data-theme="light"] .mod-v,html[data-theme="light"] .faq-i,html[data-theme="light"] .mods li{background:#fff;border-color:rgba(15,20,26,.12);box-shadow:0 1px 2px rgba(15,20,26,.04),0 8px 24px -16px rgba(15,20,26,.18)}
+html[data-theme="light"] .tc:hover,html[data-theme="light"] .mod-v:hover{border-color:rgba(184,134,0,.55)}
+html[data-theme="light"] .tc-ic{background:#fff7dc;border-color:rgba(184,134,0,.35)}
+html[data-theme="light"] .tc-ic svg{stroke:#9a6f00}
+html[data-theme="light"] .tc-chips li,html[data-theme="light"] .tags .tg{background:#f3f2ee;border-color:rgba(15,20,26,.14);color:#1d242c}
+html[data-theme="light"] .tc-dev{border-top-color:rgba(15,20,26,.14)}
+html[data-theme="light"] .tc-dev small{color:#4a545e}
+html[data-theme="light"] .tests-sec::before,html[data-theme="light"] .sd::before{display:none}
+html[data-theme="light"] .board-sec{background-image:none}
+html[data-theme="light"] .sd::after,html[data-theme="light"] .board-sec::before,html[data-theme="light"] .process-sec::before{opacity:.5}
+html[data-theme="light"] .lang button{color:#4a545e}
+html[data-theme="light"] .lang button[aria-pressed="true"]{color:#0f141a}

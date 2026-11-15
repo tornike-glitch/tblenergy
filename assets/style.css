@@ -1076,3 +1076,12 @@ html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}
 .tc-photo .tc-n{background:rgba(10,14,18,.75);padding:4px 9px;border-radius:3px;border:1px solid rgba(255,255,255,.14)}
 .tc-photo .tc-ic{background:rgba(10,14,18,.65);backdrop-filter:blur(6px)}
 @media (max-width:860px){.tc-photo .tc-bg{width:calc(100% + 40px);margin:0 -20px 6px}.tc-photo .tc-top{left:12px;right:12px;top:12px}}
+/* wide photo card: photo left, text right */
+@media (min-width:861px){
+  .tc-wide.tc-photo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);grid-template-rows:auto auto 1fr auto;column-gap:36px;row-gap:12px;padding:0 32px 0 0;align-items:start}
+  .tc-wide.tc-photo .tc-bg{grid-column:1;grid-row:1/-1;width:100%;height:100%;margin:0;aspect-ratio:auto;min-height:320px;border-bottom:0;border-right:1px solid rgba(255,255,255,.08);object-position:45% 50%}
+  .tc-wide.tc-photo .tc-top{position:absolute;top:16px;left:16px;right:auto;width:calc(45% - 32px)}
+  .tc-wide.tc-photo h3{grid-column:2;grid-row:1;margin-top:32px}
+  .tc-wide.tc-photo p{grid-column:2;grid-row:2}
+  .tc-wide.tc-photo .tc-dev{grid-column:2;grid-row:4;margin-bottom:28px}
+}

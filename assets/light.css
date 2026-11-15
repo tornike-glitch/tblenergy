@@ -140,6 +140,9 @@ html[data-theme="light"] .msgr-tip{background:#151a20;color:#fbfaf7;box-shadow:0
 html[data-theme="light"] .mbar .mbar-m svg{fill:#151a20}
 }
 html[data-theme="light"] .tc-photo .tc-bg{border-bottom:1px solid rgba(21,26,32,0.092)}
+@media (min-width:861px){
+html[data-theme="light"] .tc-wide.tc-photo .tc-bg{border-right:1px solid rgba(21,26,32,0.092)}
+}
 html[data-theme="light"] .tc-photo .tc-ic{background:rgba(10,14,18,.65);border-color:rgba(240,180,0,.35)}
 html[data-theme="light"] .tc-photo .tc-ic svg{stroke:#f0b400}
 html[data-theme="light"] .tc-photo .tc-n{color:#f0b400}

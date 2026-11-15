@@ -19,7 +19,7 @@ TESTS = [
       dka='გრუნტის კუთრი წინაღობის განსაზღვრა, ახალი კონტურების დაპროექტება და მონტაჟი, არსებული კონტურების გაზომვა, მეხამრიდების უკონტაქტო გაზომვები.',
       den='Soil resistivity measurement, design and installation of new earthing systems, testing of existing ones, stakeless measurement of lightning protection.',
       dev=['Fluke 1625']),
- dict(ic='chart', wide=True, ka='მაღალი სიზუსტის დიაგნოსტიკა, ლოგირება და პროცესების მართვა', en='Precision diagnostics, logging and process control',
+ dict(ic='chart', wide=True, bg='img/test-logging.jpg', ka='მაღალი სიზუსტის დიაგნოსტიკა, ლოგირება და პროცესების მართვა', en='Precision diagnostics, logging and process control',
       dka='ძაბვის, დენისა და წინაღობის ხანგრძლივი მონიტორინგი და მონაცემთა ლოგირება გრაფიკული გამოსახვით. სიხშირული ამძრავების (VFD) ზუსტი დიაგნოსტიკა და რემონტი.',
       den='Long-term monitoring of voltage, current and resistance with graphical data logging. Precise diagnostics and repair of variable frequency drives (VFD).',
       dev=['Fluke 287', 'Fluke 1587FC']),

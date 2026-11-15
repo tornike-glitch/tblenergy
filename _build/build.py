@@ -98,6 +98,7 @@ def footer():
   </div>
   <div class="wrap ft-bottom"><span>© 2026 TBL Energy</span><span>{t('ყველა სამუშაოზე გარანტია','All work under warranty')}</span></div>
 </footer>
+<div class="mbar"><a href="{TEL}">{ICON['phone']}<span>{t('დარეკვა','Call')}</span><span class="mono">{PHONE}</span></a></div>
 <script src="assets/app.js"></script>
 </body>
 </html>

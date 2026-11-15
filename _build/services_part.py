@@ -192,7 +192,7 @@ FAQ = [
 
 
 def build_faq(t):
-    items = ''.join(f'<details class="faq-i"{" open" if i==0 else ""}><summary>{t(q,qe)}<span class="pm" aria-hidden="true"></span></summary><p>{t(a,ae)}</p></details>' for i,(q,qe,a,ae) in enumerate(FAQ))
+    items = ''.join(f'<details class="faq-i"><summary>{t(q,qe)}<span class="pm" aria-hidden="true"></span></summary><p>{t(a,ae)}</p></details>' for i,(q,qe,a,ae) in enumerate(FAQ))
     return items
 
 

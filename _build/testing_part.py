@@ -46,7 +46,7 @@ TESTS = [
       den='Measurements to electrical safety standards ANSI/AAMI ES1, NFPA 99, IEC 62353 and IEC 60601-1.',
       dev=['Fluke Biomedical ESA609'],
       chips=[('ეკგ (EKG) აპარატები და პაციენტის მონიტორები','ECG machines and patient monitors'),('ულტრაბგერითი დიაგნოსტიკა','Ultrasound systems'),('პულსოქსიმეტრები','Pulse oximeters'),('ენცეფალოგრაფები (EEG)','EEG machines'),('პორტატული რენტგენი და ექოსკოპია','Portable X-ray and echo systems'),('ფილტვის ხელოვნური ვენტილაცია','Ventilators'),('ინფუზიური და შპრიცის ტუმბოები','Infusion and syringe pumps'),('დეფიბრილატორები','Defibrillators'),('ჰემოდიალიზის აპარატები','Hemodialysis machines'),('ელექტროქირურგიული აპარატები','Electrosurgical units'),('საოპერაციო მაგიდები და ფუნქციური საწოლები','Operating tables and functional beds'),('სამედიცინო და საოპერაციო განათება','Medical and surgical lighting'),('პაციენტის გამათბობელი/გამაგრილებელი სისტემები','Patient warming/cooling systems')]),
- dict(ic='thermo', ka='ოფიციალური თერმოგრაფიული დასკვნები', en='Official thermography reports',
+ dict(ic='thermo', bg='img/test-thermo.jpg', ka='ოფიციალური თერმოგრაფიული დასკვნები', en='Official thermography reports',
       dka='ფარებისა და ძალოვანი კვანძების გადახურების წერტილების გამოვლენა თერმოკამერით. დასკვნა დოკუმენტირებული თერმული ფოტოებით.',
       den='Detecting hot spots in panels and power connections with a thermal camera. Report documented with thermal images.',
       dev=['Fluke Ti10']),

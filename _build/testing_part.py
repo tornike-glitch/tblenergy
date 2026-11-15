@@ -31,7 +31,7 @@ TESTS = [
       dka='ელექტროძრავების, ტრანსფორმატორების, გენერატორებისა და მართვის ფარების ძაბვით ტესტირება და ექსპლუატაციაში შეყვანა.',
       den='Voltage testing and commissioning of electric motors, transformers, generators and control panels.',
       dev=['Fluke 1550C']),
- dict(ic='gauge', ka='КИПиА და ავტომატიკის დიაგნოსტიკა და კალიბრაცია', en='Instrumentation and automation diagnostics and calibration',
+ dict(ic='gauge', bg='img/test-kipia.jpg', ka='КИПиА და ავტომატიკის დიაგნოსტიკა და კალიბრაცია', en='Instrumentation and automation diagnostics and calibration',
       dka='სენსორების, კონტროლერებისა და 4-20mA სიგნალების იმიტაცია და დაკალიბრება სამრეწველო დანადგარებში.',
       den='Simulation and calibration of sensors, controllers and 4–20 mA signals in industrial equipment.',
       dev=['Fluke 724']),

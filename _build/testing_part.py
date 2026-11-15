@@ -11,7 +11,7 @@ IC = {
 }
 
 TESTS = [
- dict(ic='trace', ka='კაბელების ტრასირება და დაზიანების ძებნა', en='Cable tracing and fault location',
+ dict(ic='trace', bg='img/test-tracing.jpg', ka='კაბელების ტრასირება და დაზიანების ძებნა', en='Cable tracing and fault location',
       dka='მიწისქვეშა და კედლის შიდა ტრასების პოვნა, ხაზების ფაქტიური გეგმა, ნუმერაცია და მარკირება.',
       den='Locating underground and in-wall cable routes, as-built circuit plans, numbering and labelling.',
       dev=['Fluke 2042']),
@@ -53,8 +53,10 @@ def build_tests(t):
         if d.get('chips'):
             chips = '<ul class="tc-chips">' + ''.join(f'<li>{t(a,b)}</li>' for a,b in d['chips']) + '</ul>'
         devs = ''.join(f'<span>{x}</span>' for x in d['dev'])
-        out += (f'<article class="tc{" tc-wide" if d.get("wide") else ""}">'
-                f'<div class="tc-top"><span class="tc-n mono">{i+1:02d}</span>'
+        bg = ''
+        bgimg = f'<img class="tc-bg" src="{d["bg"]}" alt="" loading="lazy" decoding="async">' if d.get('bg') else ''
+        out += (f'<article class="tc{" tc-wide" if d.get("wide") else ""}{" tc-photo" if d.get("bg") else ""}"{bg}>'
+                f'{bgimg}<div class="tc-top"><span class="tc-n mono">{i+1:02d}</span>'
                 f'<span class="tc-ic"><svg viewBox="0 0 24 24" aria-hidden="true">{IC[d["ic"]]}</svg></span></div>'
                 f'<h3>{t(d["ka"], d["en"])}</h3><p>{t(d["dka"], d["den"])}</p>{chips}'
                 f'<div class="tc-dev"><small>{t("აპარატურა","Instruments")}</small>{devs}</div></article>')

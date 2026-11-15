@@ -12,7 +12,7 @@ SRC = os.path.join(ROOT, 'assets', 'style.css')
 OUT = os.path.join(ROOT, 'assets', 'light.css')
 
 # selectors that live on photos / dark illustration panels: keep as they are
-EXCLUDE = ['.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
+EXCLUDE = ['.tc-photo', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
            '.qf-tag', '.sd-tag', 'figcaption', '.lcd', '.report .doc', '.light', '.cta', '.ph-body',
            '.ph-screen', '.ph-brand', '.ph-num', '.ph-call', '.ph-icon', '.bub', '.plan', '.dim', '.db',
            '.chip', '.encl', '.rail', '.wires', '.bk', '.tg ', '.tool', '.sheet', '.hr', '.rl', '.pass',
@@ -20,17 +20,26 @@ EXCLUDE = ['.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''/* readability tuning */
+TUNE = '''html[data-theme="light"] .tc-photo{background:#0c1116;border-color:rgba(240,180,0,.35)}
+html[data-theme="light"] .tc-photo h3{color:#fff}
+html[data-theme="light"] .tc-photo p{color:#dfe5ea}
+html[data-theme="light"] .tc-photo .tc-dev small{color:#c5ccd3}
+html[data-theme="light"] .tc-photo .tc-dev{border-top-color:rgba(255,255,255,.18)}
+html[data-theme="light"] .tc-photo .tc-ic{background:rgba(10,14,18,.6);border-color:rgba(240,180,0,.35)}
+html[data-theme="light"] .tc-photo .tc-ic svg{stroke:#f0b400}
+html[data-theme="light"] .tc-photo .tc-n{color:#f0b400}
+/* readability tuning */
 html[data-theme="light"] canvas.circuit{opacity:.28;filter:saturate(.6)}
 html[data-theme="light"] .ph-bg::after{background:linear-gradient(90deg,var(--night) 35%,rgba(247,247,245,.85) 70%,rgba(247,247,245,.6) 100%)}
 html[data-theme="light"] .hero-ph::before{background:linear-gradient(90deg,var(--night) 0%,rgba(247,247,245,.96) 40%,rgba(247,247,245,.5) 60%,rgba(247,247,245,0) 75%)}
 html[data-theme="light"] h1,html[data-theme="light"] h2,html[data-theme="light"] h3{color:#0f141a}
-html[data-theme="light"] .lead,html[data-theme="light"] .tc p,html[data-theme="light"] .sd-body .lead,html[data-theme="light"] .mod p,html[data-theme="light"] .faq-i p,html[data-theme="light"] .pd{color:#2e3640}
+html[data-theme="light"] .tc-photo h3{color:#fff}
+html[data-theme="light"] .lead,html[data-theme="light"] .tc:not(.tc-photo) p,html[data-theme="light"] .sd-body .lead,html[data-theme="light"] .mod p,html[data-theme="light"] .faq-i p,html[data-theme="light"] .pd{color:#2e3640}
 html[data-theme="light"] .eyebrow,html[data-theme="light"] .crumbs{color:#3d4650}
 html[data-theme="light"] .site-header{background:rgba(255,255,255,.96);box-shadow:0 1px 0 rgba(15,20,26,.08)}
 html[data-theme="light"] .nav a{color:#2e3640}
 html[data-theme="light"] .nav a:hover,html[data-theme="light"] .nav a[aria-current="page"]{color:#0f141a}
-html[data-theme="light"] .tc,html[data-theme="light"] .mod-v,html[data-theme="light"] .faq-i,html[data-theme="light"] .mods li{background:#fff;border-color:rgba(15,20,26,.12);box-shadow:0 1px 2px rgba(15,20,26,.04),0 8px 24px -16px rgba(15,20,26,.18)}
+html[data-theme="light"] .tc:not(.tc-photo),html[data-theme="light"] .mod-v,html[data-theme="light"] .faq-i,html[data-theme="light"] .mods li{background:#fff;border-color:rgba(15,20,26,.12);box-shadow:0 1px 2px rgba(15,20,26,.04),0 8px 24px -16px rgba(15,20,26,.18)}
 html[data-theme="light"] .tc:hover,html[data-theme="light"] .mod-v:hover{border-color:rgba(184,134,0,.55)}
 html[data-theme="light"] .tc-ic{background:#fff7dc;border-color:rgba(184,134,0,.35)}
 html[data-theme="light"] .tc-ic svg{stroke:#9a6f00}

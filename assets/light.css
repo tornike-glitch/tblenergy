@@ -134,6 +134,11 @@ html[data-theme="light"] .cred-list li{border-bottom:1px dashed rgba(21,26,32,0.
 html[data-theme="light"] .cred-list em{color:var(--amber-text)}
 html[data-theme="light"] .cred-open{border:1px solid rgba(21,26,32,0.23);color:#151a20}
 html[data-theme="light"] .cred-open:hover{color:var(--amber-text)}
+html[data-theme="light"] .msgr svg{fill:#151a20}
+html[data-theme="light"] .msgr-tip{background:#151a20;color:#fbfaf7;box-shadow:0 10px 24px -10px rgba(21,26,32,0.175)}
+@media (max-width:640px){
+html[data-theme="light"] .mbar .mbar-m svg{fill:#151a20}
+}
 /* readability tuning */
 html[data-theme="light"] canvas.circuit{opacity:.28;filter:saturate(.6)}
 html[data-theme="light"] .ph-bg::after{background:linear-gradient(90deg,var(--night) 35%,rgba(247,247,245,.85) 70%,rgba(247,247,245,.6) 100%)}

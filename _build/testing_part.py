@@ -15,7 +15,7 @@ TESTS = [
       dka='მიწისქვეშა და კედლის შიდა ტრასების პოვნა, ხაზების ფაქტიური გეგმა, ნუმერაცია და მარკირება.',
       den='Locating underground and in-wall cable routes, as-built circuit plans, numbering and labelling.',
       dev=['Fluke 2042']),
- dict(ic='earth', ka='დამიწების სისტემების ტესტირება', en='Earthing system testing',
+ dict(ic='earth', bg='img/test-earthing.jpg', ka='დამიწების სისტემების ტესტირება', en='Earthing system testing',
       dka='გრუნტის კუთრი წინაღობის განსაზღვრა, ახალი კონტურების დაპროექტება და მონტაჟი, არსებული კონტურების გაზომვა, მეხამრიდების უკონტაქტო გაზომვები.',
       den='Soil resistivity measurement, design and installation of new earthing systems, testing of existing ones, stakeless measurement of lightning protection.',
       dev=['Fluke 1625']),

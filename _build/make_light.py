@@ -20,7 +20,10 @@ EXCLUDE = ['.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.t
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .ct-mail .ct-ic{background:#f0b400;border:0;color:#111}
+TUNE = '''html[data-theme="light"] .ct-addr{background:#fff;border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .ct-addr em{color:#b07d00}
+html[data-theme="light"] .ct-addr-ic{color:#b07d00;background:rgba(240,180,0,.15)}
+html[data-theme="light"] .ct-mail .ct-ic{background:#f0b400;border:0;color:#111}
 html[data-theme="light"] .ct-call{background:linear-gradient(150deg,#f5bd1a,#e2a600);border-color:transparent}
 html[data-theme="light"] .ct-call b,html[data-theme="light"] .ct-call .ct-btn{color:#111}
 html[data-theme="light"] .ct-call .ct-k,html[data-theme="light"] .ct-call .ct-sub{color:#3b3205}

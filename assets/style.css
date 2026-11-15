@@ -1129,3 +1129,14 @@ html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}
 .ct-em{font-size:clamp(17px,1.5vw,20px)!important;word-break:break-all}
 @media (max-width:640px){.ct-grid{grid-template-columns:1fr}}
 .ct-num{white-space:nowrap;font-size:clamp(22px,1.9vw,28px)!important}
+.ct-addr{display:flex;align-items:center;gap:18px;margin-top:20px;padding:20px 26px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.02);color:inherit;text-decoration:none;transition:border-color .2s,transform .2s}
+.ct-addr:hover{border-color:rgba(245,189,26,.5);transform:translateY(-2px)}
+.ct-addr-ic{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(245,189,26,.12);color:var(--amber)}
+.ct-addr-ic svg{width:22px;height:22px}
+.ct-addr small{display:block;font-size:13px;opacity:.65}
+.ct-addr b{font-size:18px;font-weight:600}
+.ct-addr em{margin-left:auto;font-style:normal;color:var(--amber);font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.ct-addr em svg{width:16px;height:16px}
+.ct-addr+.ct-brief{margin-top:20px}
+@media (max-width:640px){.ct-addr{flex-wrap:wrap;padding:18px}.ct-addr em{margin-left:64px}}
+.ct-addr{border:1px solid rgba(255,255,255,.09)}

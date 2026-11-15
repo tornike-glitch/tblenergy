@@ -9,6 +9,7 @@ OUT = _o.path.dirname(_o.path.dirname(_o.path.abspath(__file__)))
 PHONE = '+995 500 05 58 59'
 TEL = 'tel:+995500055859'
 EMAIL = 'info@tblenergy.ge'
+MAPS = 'https://www.google.com/maps/search/?api=1&query=TBL+Energy+%E1%83%92%E1%83%A3%E1%83%A0%E1%83%90%E1%83%9B%E1%83%98%E1%83%A8%E1%83%95%E1%83%98%E1%83%9A%E1%83%98+12%E1%83%90+Tbilisi'
 FB = 'https://www.facebook.com/tblenergy.ge'
 MSG = 'https://m.me/tblenergy.ge'
 
@@ -16,6 +17,7 @@ def t(ka, en):
     return f'<span data-l="ka">{ka}</span><span data-l="en">{en}</span>'
 
 ICON = {
+ 'pin': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
  'arrow': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
  'phone': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>',
  'msg': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.4 2 2 6.1 2 11.4c0 3 1.5 5.7 3.8 7.4V22l3.5-1.9c.9.3 1.8.4 2.7.4 5.6 0 10-4.1 10-9.4S17.6 2 12 2zm1 12.6-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg>',
@@ -123,6 +125,7 @@ def footer():
       <ul>
         <li><a class="mono" href="{TEL}">{PHONE}</a></li>
         <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
+        <li><a href="{MAPS}" target="_blank" rel="noopener">{t('გურამიშვილი 12ა, თბილისი','Guramishvili 12a, Tbilisi')}</a></li>
         <li><a href="{MSG}">Messenger</a></li>
         <li><a href="{FB}">Facebook</a></li>
       </ul>
@@ -398,6 +401,7 @@ contact += f'''<section class="sec ct-sec"><div class="wrap">
       <span class="ct-btn">{t('მოგვწერეთ','Write to us')}{ICON['arrow']}</span>
     </a>
   </div>
+  <a class="ct-addr" href="{MAPS}" target="_blank" rel="noopener"><span class="ct-addr-ic">{ICON['pin']}</span><span><small>{t('მისამართი','Address')}</small><b>{t('გურამიშვილი 12ა, თბილისი','Guramishvili 12a, Tbilisi')}</b></span><em>{t('რუკაზე ნახვა','View on map')}{ICON['arrow']}</em></a>
   <div class="ct-brief">
     <div class="ct-brief-h"><p class="eyebrow">{t('როგორ მივიღოთ შეკვეთა','How to place an order')}</p><h2 class="h-md">{t('დარეკვისას გვითხარით','When you call, tell us')}</h2></div>
     <ol class="ct-steps">

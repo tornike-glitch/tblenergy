@@ -10,3 +10,5 @@ Edit the text in these scripts (not in the generated .html files) and run:
 - `projects_part.py` – project galleries
 - `process_part.py` – "how we work" animation
 - `visuals.py` – service card illustrations
+
+After editing assets/style.css run `python3 _build/make_light.py` to regenerate the light theme (assets/light.css).

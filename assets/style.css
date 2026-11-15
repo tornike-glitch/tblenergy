@@ -978,3 +978,15 @@ html[data-lang="ka"] .sd-label{text-transform:none;letter-spacing:.02em;font-fam
   .ft{grid-template-columns:1fr;gap:24px;padding-top:44px;padding-bottom:28px}
   .ft > div:nth-child(2),.ft > div:nth-child(3){display:none}
 }
+
+/* theme toggle */
+.theme-t{width:38px;height:38px;border-radius:50%;border:1px solid var(--hair-d);background:none;display:grid;place-items:center;cursor:pointer;color:var(--fog);flex-shrink:0;transition:color .2s,border-color .2s,background .2s}
+.theme-t:hover{color:var(--amber);border-color:rgba(240,180,0,.5)}
+.theme-t svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.theme-t .i-moon{display:none}
+html[data-theme="light"] .theme-t .i-sun{display:none}
+html[data-theme="light"] .theme-t .i-moon{display:block}
+@media (max-width:480px){.theme-t{width:34px;height:34px}}
+@media (max-width:640px){.hdr-call{display:none}}
+html[data-theme="light"] .brand-mark [fill="#eef1f4"]{fill:#14315c}
+html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}

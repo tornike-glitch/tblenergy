@@ -268,3 +268,13 @@
   var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
   lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));sx=null});
 })();
+
+/* ---------- light / dark theme ---------- */
+(function(){
+  var b=document.getElementById('theme-t');if(!b)return;
+  b.addEventListener('click',function(){
+    var r=document.documentElement,light=r.getAttribute('data-theme')!=='light';
+    if(light)r.setAttribute('data-theme','light');else r.removeAttribute('data-theme');
+    try{localStorage.setItem('tbl-theme',light?'light':'dark')}catch(e){}
+  });
+})();

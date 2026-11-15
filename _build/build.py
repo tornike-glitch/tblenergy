@@ -47,7 +47,8 @@ def head(title, desc, extra=''):
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Georgian:wght@300..700&family=Noto+Sans:wght@300..700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
-{extra}<script>try{{var l=localStorage.getItem('btl-lang');if(l==='en'||l==='ka')document.documentElement.setAttribute('data-lang',l)}}catch(e){{}}</script>
+<link rel="stylesheet" href="assets/light.css">
+{extra}<script>try{{var l=localStorage.getItem('btl-lang');if(l==='en'||l==='ka')document.documentElement.setAttribute('data-lang',l);var th=localStorage.getItem('tbl-theme');if(th==='light')document.documentElement.setAttribute('data-theme','light')}}catch(e){{}}</script>
 </head>
 <body>
 <a class="skip" href="#main">{t('მთავარ შინაარსზე გადასვლა','Skip to content')}</a>
@@ -61,7 +62,7 @@ def header(cur):
     <a class="brand" href="index.html" aria-label="TBL Energy">{LOGO}<span class="brand-name"><b>TBL ENERGY</b><small>Electrical services</small></span></a>
     <nav class="nav" aria-label="{'Main'}">{links}</nav>
     <div class="hdr-tools">
-      <div class="lang" role="group" aria-label="Language"><button type="button" id="lang-ka" data-set="ka" aria-pressed="true">KA</button><button type="button" id="lang-en" data-set="en" aria-pressed="false">EN</button></div>
+      <button type="button" class="theme-t" id="theme-t" aria-label="Light or dark theme" title="{'Light / dark'}"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button><div class="lang" role="group" aria-label="Language"><button type="button" id="lang-ka" data-set="ka" aria-pressed="true">KA</button><button type="button" id="lang-en" data-set="en" aria-pressed="false">EN</button></div>
       <a class="hdr-call" href="{TEL}" aria-label="Call +995 500 05 58 59">{ICON['phone']}<span class="mono">{PHONE}</span></a>
     </div>
     <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>

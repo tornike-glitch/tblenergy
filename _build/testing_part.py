@@ -35,7 +35,7 @@ TESTS = [
       dka='სენსორების, კონტროლერებისა და 4-20mA სიგნალების იმიტაცია და დაკალიბრება სამრეწველო დანადგარებში.',
       den='Simulation and calibration of sensors, controllers and 4–20 mA signals in industrial equipment.',
       dev=['Fluke 724']),
- dict(ic='panel', ka='ელექტროდანადგარების ინსტალაციის ტესტირება', en='Electrical installation testing',
+ dict(ic='panel', bg='img/test-install.jpg', ka='ელექტროდანადგარების ინსტალაციის ტესტირება', en='Electrical installation testing',
       dka='ფაზა-ნულის სრული წინაღობის გაზომვა, მოკლე ჩართვის სავარაუდო დენების (PFC/PSC) გამოთვლა, დიფერენციალური ავტომატების (RCD/FI) ტესტირება ამოქმედების დროსა და დენზე, წრედის უწყვეტობის გაზომვა.',
       den='Line–neutral loop impedance, prospective fault current (PFC/PSC) calculation, RCD/FI testing of trip time and trip current, circuit continuity measurement.',
       dev=['Fluke 1653B']),

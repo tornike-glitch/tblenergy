@@ -278,3 +278,12 @@
     try{localStorage.setItem('tbl-theme',light?'light':'dark')}catch(e){}
   });
 })();
+
+/* mobile services dropdown */
+(function(){
+  var b=document.getElementById('msub-t');if(!b)return;
+  b.addEventListener('click',function(){
+    var w=b.parentNode,open=!w.classList.contains('open');
+    w.classList.toggle('open',open);b.setAttribute('aria-expanded',open?'true':'false');
+  });
+})();

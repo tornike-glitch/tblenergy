@@ -116,6 +116,10 @@ html[data-theme="light"] .pstep .pn{color:var(--amber-text)}
 }
 html[data-theme="light"] .theme-t:hover{color:var(--amber-text)}
 html[data-theme="light"] html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#191e23}
+html[data-theme="light"] .msub-t[aria-current="page"]{color:var(--amber-text)}
+html[data-theme="light"] .msub-t[aria-expanded="true"] .chev{color:var(--amber-text)}
+html[data-theme="light"] .mnav .msub-l a:hover,html[data-theme="light"] .mnav .msub-l a:active{color:var(--amber-text)}
+html[data-theme="light"] .mnav .msub-l a.all{color:var(--amber-text)}
 /* readability tuning */
 html[data-theme="light"] canvas.circuit{opacity:.28;filter:saturate(.6)}
 html[data-theme="light"] .ph-bg::after{background:linear-gradient(90deg,var(--night) 35%,rgba(247,247,245,.85) 70%,rgba(247,247,245,.6) 100%)}

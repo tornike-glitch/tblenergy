@@ -56,7 +56,18 @@ def head(title, desc, extra=''):
 
 def header(cur):
     links = ''.join(f'<a href="{h}"{" aria-current=\"page\"" if h==cur else ""}>{t(ka,en)}</a>' for h,ka,en in NAV)
-    mlinks = ''.join(f'<a href="{h}"{" aria-current=\"page\"" if h==cur else ""}>{t(ka,en)}{ICON["arrow"].replace("<svg","<svg width=\"20\" height=\"20\"")}</a>' for h,ka,en in NAV)
+    from services_part import SERVICES as _SV
+    _arrow = ICON["arrow"].replace("<svg","<svg width=\"20\" height=\"20\"")
+    _chev = '<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'
+    _sub = ''.join(f'<a href="services.html#{x["id"]}">{t(x["ka"], x["en"])}</a>' for x in _SV)
+    _sub += f'<a href="testing.html">{t("ელექტრო გაზომვები და აუდიტი","Electrical testing & audit")}</a><a href="services.html" class="all">{t("ყველა სერვისი","All services")}</a>'
+    mlinks = ''
+    for h,ka,en in NAV:
+        cur_attr = ' aria-current="page"' if h==cur else ''
+        if h == 'services.html':
+            mlinks += f'<div class="msub"><button type="button" class="msub-t" id="msub-t" aria-expanded="false" aria-controls="msub-l"{cur_attr}>{t(ka,en)}{_chev}</button><div class="msub-l" id="msub-l">{_sub}</div></div>'
+        else:
+            mlinks += f'<a href="{h}"{cur_attr}>{t(ka,en)}{_arrow}</a>'
     return f'''<header class="site-header">
   <div class="wrap hdr">
     <a class="brand" href="index.html" aria-label="TBL Energy">{LOGO}<span class="brand-name"><b>TBL ENERGY</b><small>Electrical services</small></span></a>

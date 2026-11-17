@@ -83,7 +83,8 @@ def header(cur):
     from services_part import SERVICES as _SV
     _arrow = ICON["arrow"].replace("<svg","<svg width=\"20\" height=\"20\"")
     _chev = '<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'
-    _sub = ''.join(f'<a href="services.html#{x["id"]}">{t(x["ka"], x["en"])}</a>' for x in _SV)
+    from seo_content import SPAGES as _SP
+    _sub = ''.join(f'<a href="{_SP[x["id"]]["slug"]}">{t(x["ka"], x["en"])}</a>' for x in _SV)
     _sub += f'<a href="testing.html">{t("ელექტრო გაზომვები და აუდიტი","Electrical testing & audit")}</a><a href="services.html" class="all">{t("ყველა სერვისი","All services")}</a>'
     mlinks = ''
     for h,ka,en in NAV:
@@ -117,7 +118,7 @@ def footer():
     </div>
     <div>
       <h4>{t('გვერდები','Pages')}</h4>
-      <ul>{''.join(f'<li><a href="{h}">{t(ka,en)}</a></li>' for h,ka,en in NAV[1:])}</ul>
+      <ul>{''.join(f'<li><a href="{h}">{t(ka,en)}</a></li>' for h,ka,en in NAV[1:])}<li><a href="tbilisi-districts.html">{t('ელექტრიკი უბნებში','Districts')}</a></li><li><a href="blog.html">{t('რჩევები','Tips')}</a></li></ul>
     </div>
     <div>
       <h4>{t('სერვისები','Services')}</h4>
@@ -417,3 +418,8 @@ contact += f'''<section class="sec ct-sec"><div class="wrap">
 '''
 write('contact.html', 'ელექტრიკის გამოძახება თბილისში · კონტაქტი | TBL Energy', 'გამოიძახეთ ელექტრიკი თბილისში: +995 500 05 58 59. ავარიული ელექტრო დახმარება და გამოძახებით მომსახურება.', contact)
 print('ok')
+
+# ---------------- SEO PAGES ----------------
+from seo_pages import build_seo, write_sitemap
+_pages = build_seo(globals())
+write_sitemap(os.path.join(OUT, 'sitemap.xml'), _pages)

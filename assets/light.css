@@ -156,6 +156,44 @@ html[data-theme="light"] .ct-addr{background:rgba(21,26,32,0.023)}
 html[data-theme="light"] .ct-addr-ic{color:var(--amber-text)}
 html[data-theme="light"] .ct-addr em{color:var(--amber-text)}
 html[data-theme="light"] .ct-addr{border:1px solid rgba(21,26,32,0.103)}
+html[data-theme="light"] .sp-text p{color:#2d3237}
+html[data-theme="light"] .sp-imgs figure{background:#ffffff}
+html[data-theme="light"] .sp-gfx{border:1px solid rgba(21,26,32,0.092)}
+html[data-theme="light"] .sp-box{border:1px solid rgba(21,26,32,0.103);background:rgba(21,26,32,0.023)}
+html[data-theme="light"] .sp-signs li::before{color:#fbfaf7}
+html[data-theme="light"] .sp-steps li{border:1px solid rgba(21,26,32,0.103);background:rgba(21,26,32,0.023)}
+html[data-theme="light"] .sp-steps .mono{color:var(--amber-text)}
+html[data-theme="light"] .sp-steps p{color:#3e4348}
+html[data-theme="light"] .sp-cred{color:#474c51}
+html[data-theme="light"] .sp-rel{border:1px solid rgba(21,26,32,0.103);background:rgba(21,26,32,0.023)}
+html[data-theme="light"] .sp-rel span{color:#3e4348}
+html[data-theme="light"] .sp-rel em,html[data-theme="light"] .sp-art em{color:var(--amber-text)}
+html[data-theme="light"] .sp-dist li{background:rgba(21,26,32,0.034)}
+html[data-theme="light"] .sp-dist svg{color:var(--amber-text)}
+html[data-theme="light"] .sp-small{color:#474c51}
+html[data-theme="light"] .sp-svc a{border:1px solid rgba(21,26,32,0.103)}
+html[data-theme="light"] .sp-svc svg{color:var(--amber-text)}
+html[data-theme="light"] .sp-art{border:1px solid rgba(21,26,32,0.103);background:rgba(21,26,32,0.023)}
+html[data-theme="light"] .sp-art .mono{color:#474c51}
+html[data-theme="light"] .sp-art p{color:#3e4348}
+html[data-theme="light"] .prose p{color:#2d3237}
+html[data-theme="light"] .prose ul{color:#2d3237}
+html[data-theme="light"] .prose li::marker{color:var(--amber-text)}
+html[data-theme="light"] .sp-meta{color:#474c51}
+html[data-theme="light"] .sp-note>svg{color:var(--amber-text)}
+html[data-theme="light"] .sp-note p{color:#1f2429!important}
+html[data-theme="light"] .sp-note a{color:var(--amber-text)}
+html[data-theme="light"] .sp-text p,html[data-theme="light"] .prose p,html[data-theme="light"] .prose ul{color:#3a434d}
+html[data-theme="light"] .sp-two{background:#ebe8e1}
+html[data-theme="light"] .sp-box,html[data-theme="light"] .sp-steps li,html[data-theme="light"] .sp-rel,html[data-theme="light"] .sp-art,html[data-theme="light"] .sp-svc a{background:#fff;border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .sp-box .checks,html[data-theme="light"] .sp-box .checks li{border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .sp-steps p,html[data-theme="light"] .sp-rel span,html[data-theme="light"] .sp-art p{color:#555f6a}
+html[data-theme="light"] .sp-signs li{background:#fff8e1;border-color:rgba(200,150,0,.3)}
+html[data-theme="light"] .sp-dist li{background:#fff}
+html[data-theme="light"] .sp-tags .tg{border-color:rgba(0,0,0,.15);color:#3a434d}
+html[data-theme="light"] .sp-note{background:#fff8e1;border-color:rgba(200,150,0,.35)}
+html[data-theme="light"] .sp-note p{color:#222!important}
+html[data-theme="light"] .sp-rel em,html[data-theme="light"] .sp-art em,html[data-theme="light"] .sp-note a,html[data-theme="light"] .sp-steps .mono,html[data-theme="light"] .sp-dist svg,html[data-theme="light"] .sp-svc svg{color:#a87800}
 html[data-theme="light"] .ct-addr{background:#fff;border-color:rgba(0,0,0,.1)}
 html[data-theme="light"] .ct-addr em{color:#b07d00}
 html[data-theme="light"] .ct-addr-ic{color:#b07d00;background:rgba(240,180,0,.15)}

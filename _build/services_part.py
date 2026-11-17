@@ -1,4 +1,7 @@
 # Service catalogue shared by the home board, services page and footer.
+from seo_content import SPAGES
+def slug(i): return SPAGES[i]['slug']
+
 SERVICES = [
   dict(id='emergency', qf='QF1', alert=True,
        ka='ელექტრიკი გამოძახებით', en='Call-out electrician',
@@ -118,7 +121,7 @@ def build_board(t, ICON):
         alert = ' mod-alert' if s.get('alert') else ''
         vis = GEN_SVG if s.get('graphic') else VIS[s['id']]
         tag = t('ავარიული','EMERGENCY') if s.get('alert') else t('ჩართულია','ON')
-        href = s.get('href') or f'services.html#{s["id"]}'
+        href = s.get('href') or slug(s['id'])
         tags = ''.join(f'<span class="tg">{t(x,y)}</span>' for x,y in s['tags'])
         cards += (f'<a class="mod mod-v{alert}" href="{href}"><div class="mod-vis">{vis}</div>'
                   f'<div class="mod-top"><span class="qf-tag"><b>{s["qf"]}</b>{tag}</span><span class="led" aria-hidden="true"></span></div>'
@@ -153,7 +156,7 @@ def build_services_body(t, ICON, TEL, PHONE):
       <ul class="mods">{mods}</ul>
       <div class="sd-actions">
         <a class="btn btn-primary" href="{TEL}">{ICON['phone']}{t('გამოიძახეთ ელექტრიკი','Call an electrician')}</a>
-        <a class="arrow light-arrow" href="testing.html">{t('გაზომვები და აქტი','Testing & report')}</a>
+        <a class="arrow light-arrow" href="{slug(d['id'])}">{t('დაწვრილებით','Learn more')}</a>
       </div>
     </div>
   </div>
@@ -169,7 +172,7 @@ def build_services_body(t, ICON, TEL, PHONE):
 
 
 def footer_services(t):
-    return ''.join(f'<li><a href="services.html#{s["id"]}">{t(s["ka"], s["en"])}</a></li>' for s in SERVICES)
+    return ''.join(f'<li><a href="{slug(s["id"])}">{t(s["ka"], s["en"])}</a></li>' for s in SERVICES)
 
 
 FAQ = [

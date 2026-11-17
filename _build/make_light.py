@@ -20,7 +20,18 @@ EXCLUDE = ['.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.t
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .ct-addr{background:#fff;border-color:rgba(0,0,0,.1)}
+TUNE = '''html[data-theme="light"] .sp-text p,html[data-theme="light"] .prose p,html[data-theme="light"] .prose ul{color:#3a434d}
+html[data-theme="light"] .sp-two{background:#ebe8e1}
+html[data-theme="light"] .sp-box,html[data-theme="light"] .sp-steps li,html[data-theme="light"] .sp-rel,html[data-theme="light"] .sp-art,html[data-theme="light"] .sp-svc a{background:#fff;border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .sp-box .checks,html[data-theme="light"] .sp-box .checks li{border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .sp-steps p,html[data-theme="light"] .sp-rel span,html[data-theme="light"] .sp-art p{color:#555f6a}
+html[data-theme="light"] .sp-signs li{background:#fff8e1;border-color:rgba(200,150,0,.3)}
+html[data-theme="light"] .sp-dist li{background:#fff}
+html[data-theme="light"] .sp-tags .tg{border-color:rgba(0,0,0,.15);color:#3a434d}
+html[data-theme="light"] .sp-note{background:#fff8e1;border-color:rgba(200,150,0,.35)}
+html[data-theme="light"] .sp-note p{color:#222!important}
+html[data-theme="light"] .sp-rel em,html[data-theme="light"] .sp-art em,html[data-theme="light"] .sp-note a,html[data-theme="light"] .sp-steps .mono,html[data-theme="light"] .sp-dist svg,html[data-theme="light"] .sp-svc svg{color:#a87800}
+html[data-theme="light"] .ct-addr{background:#fff;border-color:rgba(0,0,0,.1)}
 html[data-theme="light"] .ct-addr em{color:#b07d00}
 html[data-theme="light"] .ct-addr-ic{color:#b07d00;background:rgba(240,180,0,.15)}
 html[data-theme="light"] .ct-mail .ct-ic{background:#f0b400;border:0;color:#111}

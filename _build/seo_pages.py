@@ -130,26 +130,56 @@ def build_seo(g):
       'search':'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/>',
       'appl':'<rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6h2"/>',
       'pro':'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>'}
-    blocks = ''
+    def price(pr):
+        return t(f'<b>{pr}</b><i>₾-დან</i>', f'<i>from</i><b>{pr}</b><i>₾</i>')
+    descs = {'alert':('დღე და ღამე, უქმეების ჩათვლით','Day and night, holidays included'),
+             'wire':('ახალი და სარემონტო ობიექტები','New builds and renovations'),
+             'panel':('დაცვა, რომელიც სწორად არის შერჩეული','Protection that is sized right'),
+             'plug':('შეცვლა, მონტაჟი, ახალი წერტილები','Replacement, installation, new points'),
+             'bulb':('სანათები, ჭაღები, სპოტები, LED','Fittings, chandeliers, spots, LED'),
+             'search':('გაზომვით, ზედმეტი ნგრევის გარეშე','By measurement, without needless damage'),
+             'appl':('ქურა, ბოილერი, კონდიციონერი','Cooker, water heater, air conditioning')}
+    chips = ''
+    cards = ''
+    special = None
     for ic, (hk, he), sid, rows in PRICES:
-        trs = ''
-        for (a, b), pr in rows:
-            val = t(f'{pr} ₾-დან', f'from {pr} ₾') if pr else t('შეთანხმებით', 'On request')
-            trs += f'<tr><td>{t(a,b)}</td><td>{val}</td></tr>'
-        more = f'<a class="pr-more" href="{SPAGES[sid]["slug"]}">{t("სერვისის შესახებ","About this service")}{ICON["arrow"]}</a>' if sid else f'<a class="pr-more" href="testing.html">{t("გაზომვები და აუდიტი","Testing & audit")}{ICON["arrow"]}</a>'
-        blocks += f'<div class="pr-block"><h2 class="pr-h"><span class="pr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{PIC[ic]}</svg></span>{t(hk,he)}</h2><table class="pr-t"><thead><tr><th>{t("სამუშაო","Work")}</th><th>{t("ფასი","Price")}</th></tr></thead><tbody>{trs}</tbody></table>{more}</div>'
+        if not sid:
+            special = (ic, hk, he, rows); continue
+        cid = 'p-' + ic
+        chips += f'<a href="#{cid}"><span class="pr2-ci"><svg viewBox="0 0 24 24" aria-hidden="true">{PIC[ic]}</svg></span>{t(hk,he)}</a>'
+        lis = ''.join(f'<li><span class="pr2-n">{t(a,b)}</span><span class="pr2-dots" aria-hidden="true"></span><span class="pr2-p">{price(pr)}</span></li>' for (a, b), pr in rows)
+        hot = ' pr2-hot' if ic == 'alert' else ''
+        badge = '<span class="pr2-badge">24/7</span>' if ic == 'alert' else ''
+        cards += (f'<article class="pr2-card{hot}" id="{cid}"><header><span class="pr2-ic"><svg viewBox="0 0 24 24" aria-hidden="true">{PIC[ic]}</svg></span>'
+                  f'<div><h2>{t(hk,he)}</h2><p>{t(*descs[ic])}</p></div>{badge}</header><ul class="pr2-list">{lis}</ul>'
+                  f'<a class="pr2-more" href="{SPAGES[sid]["slug"]}">{t("სერვისის შესახებ","About this service")}{ICON["arrow"]}</a></article>')
+    ic, hk, he, rows = special
+    sp_items = ''.join(f'<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>{t(a,b)}</li>' for (a, b), _ in rows)
+    tops = [(('ელექტრიკის გამოძახება','Call-out'), 30), (('გაყვანილობის წერტილი','Wiring point'), 20), (('ბინის გაყვანილობა, 1 მ²','Apartment wiring, per m²'), 25), (('ფარის სრული აწყობა','Full board assembly'), 150)]
+    top_html = ''.join(f'<div class="pr2-stat"><span>{t(a,b)}</span><div class="pr2-big">{price(pr)}</div></div>' for (a, b), pr in tops)
     body = hero([('ფასები', 'Prices', None)], t('ელექტრიკის მომსახურების ფასები', 'Electrician prices'),
-                t('საორიენტაციო ფასები თბილისში. ზუსტ ფასს გეტყვით სამუშაოს დეტალების გარკვევის შემდეგ, სამუშაოს დაწყებამდე.',
-                  'Indicative prices in Tbilisi. We confirm the exact price once we know the details, before any work starts.'))
-    body += f"""<section class="sec pr-sec">
+                t('გამჭვირვალე, საორიენტაციო ფასები თბილისში. ზუსტ ფასს სამუშაოს დაწყებამდე გეტყვით.',
+                  'Clear, indicative prices in Tbilisi. We confirm the exact price before any work starts.'))
+    body += f"""<section class="pr2">
   <div class="wrap">
-    <div class="pr-notes">
-      <div class="pr-note"><b>{t('ფასები პირობითია','Prices are indicative')}</b><p>{t('ცხრილში მოცემულია მინიმალური, „-დან“ ფასები. საბოლოო ფასი დამოკიდებულია სამუშაოს მოცულობაზე, კედლის მასალაზე, მისაწვდომობაზე და მასალებზე. ზუსტ ფასს გეტყვით ტელეფონით გასაუბრების ან ობიექტის ნახვის შემდეგ, სამუშაოს დაწყებამდე. ფარული ხარჯი არ არის.','The table shows minimum “from” prices. The final price depends on the scope, wall material, access and materials. We confirm the exact price after a phone call or site visit, before work begins. No hidden costs.')}</p></div>
-      <div class="pr-note"><b>{t('რეგიონებშიც ვმუშაობთ','We also work outside Tbilisi')}</b><p>{t('თბილისის გარდა ვმუშაობთ საქართველოს რეგიონებშიც. ასეთ შემთხვევაში ვადასა და ტრანსპორტირების პირობებს წინასწარ შევათანხმებთ.','Besides Tbilisi we work across Georgia. For regional jobs we agree timing and travel in advance.')}</p></div>
-      <div class="pr-note pr-warn"><b>{t('უსაფრთხოების რჩევა','Safety tip')}</b><p>{t('თუ წვის სუნია, ნაპერწკალს ან კვამლს ხედავთ, გათიშეთ მთავარი ავტომატი, ნუ შეეხებით დაზიანებულ ადგილს და დაგვირეკეთ. ხანძრის შემთხვევაში დარეკეთ 112-ზე.','If you smell burning or see sparks or smoke, switch off the main breaker, do not touch the damaged spot and call us. In case of fire, call 112.')}</p></div>
+    <div class="pr2-stats">{top_html}</div>
+    <div class="pr2-info"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><p>{t('<b>ფასები პირობითია.</b> მითითებულია მინიმალური ფასი. საბოლოო ფასი დამოკიდებულია სამუშაოს მოცულობაზე, კედლის მასალაზე და მისაწვდომობაზე. ზუსტ ფასს გეტყვით ტელეფონით გასაუბრების ან ობიექტის ნახვის შემდეგ, როცა სამუშაოს დეტალებს გავიგებთ.','<b>Prices are indicative.</b> The minimum price is shown. The final price depends on the scope, wall material and access. We confirm the exact price after a call or site visit, once we know the details.')}</p></div>
+    <nav class="pr2-nav" aria-label="Price categories">{chips}<a href="#p-pro"><span class="pr2-ci"><svg viewBox="0 0 24 24" aria-hidden="true">{PIC['pro']}</svg></span>{t('სპეციალიზებული','Specialist')}</a></nav>
+    <div class="pr2-grid">{cards}</div>
+    <article class="pr2-spec" id="p-pro">
+      <div class="pr2-spec-l">
+        <span class="pr2-ic"><svg viewBox="0 0 24 24" aria-hidden="true">{PIC['pro']}</svg></span>
+        <h2>{t(hk,he)}</h2>
+        <p>{t('ამ სამუშაოების ფასი ობიექტზე, სიმძლავრეზე და გაზომვების რაოდენობაზეა დამოკიდებული, ამიტომ შეთავაზებას ინდივიდუალურად გიმზადებთ.','The price of this work depends on the site, power and number of measurements, so we prepare an individual quote.')}</p>
+        <div class="pr2-spec-a"><a class="btn btn-primary" href="{TEL}">{ICON['phone']}{t('შეთავაზების მოთხოვნა','Request a quote')}</a><a class="pr2-more" href="testing.html">{t('გაზომვები და აუდიტი','Testing & audit')}{ICON['arrow']}</a></div>
+      </div>
+      <ul class="pr2-spec-list">{sp_items}</ul>
+    </article>
+    <div class="pr2-foot">
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><b>{t('რეგიონებშიც ვმუშაობთ','We work outside Tbilisi too')}</b><p>{t('ვადასა და ტრანსპორტირების პირობებს წინასწარ შევათანხმებთ.','Timing and travel are agreed in advance.')}</p></div>
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><b>{t('გარანტია ყველა სამუშაოზე','Warranty on all work')}</b><p>{t('მასალა ფასში არ შედის, თუ სხვა რამ არ არის შეთანხმებული.','Materials are not included unless agreed otherwise.')}</p></div>
+      <div class="pr2-warn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5v.5"/></svg><b>{t('უსაფრთხოების რჩევა','Safety tip')}</b><p>{t('წვის სუნის, ნაპერწკლის ან კვამლის დროს გათიშეთ მთავარი ავტომატი და დაგვირეკეთ. ხანძრისას დარეკეთ 112-ზე.','If you smell burning or see sparks or smoke, switch off the main breaker and call us. In a fire, call 112.')}</p></div>
     </div>
-    <div class="pr-grid">{blocks}</div>
-    <p class="pr-foot">{t('მასალის ღირებულება ფასში არ შედის, თუ სხვა რამ არ არის შეთანხმებული. ყველა შესრულებულ სამუშაოზე გაძლევთ გარანტიას.','Materials are not included unless agreed otherwise. All completed work comes with a warranty.')}</p>
   </div>
 </section>
 """

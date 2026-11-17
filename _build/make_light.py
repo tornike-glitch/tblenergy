@@ -12,7 +12,7 @@ SRC = os.path.join(ROOT, 'assets', 'style.css')
 OUT = os.path.join(ROOT, 'assets', 'light.css')
 
 # selectors that live on photos / dark illustration panels: keep as they are
-EXCLUDE = ['.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
+EXCLUDE = ['.pr2-spec', '.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
            '.qf-tag', '.sd-tag', 'figcaption', '.lcd', '.report .doc', '.light', '.cta', '.ph-body',
            '.ph-screen', '.ph-brand', '.ph-num', '.ph-call', '.ph-icon', '.bub', '.plan', '.dim', '.db',
            '.chip', '.encl', '.rail', '.wires', '.bk', '.tg ', '.tool', '.sheet', '.hr', '.rl', '.pass',
@@ -20,7 +20,28 @@ EXCLUDE = ['.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.t
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .pr-note,html[data-theme="light"] .pr-t{background:#fff;border-color:rgba(0,0,0,.1)}
+TUNE = '''html[data-theme="light"] .pr2-spec{background:radial-gradient(120% 140% at 0% 0%,rgba(240,180,0,.16),transparent 55%),#151a20}
+html[data-theme="light"] .pr2-spec h2{color:#fff}
+html[data-theme="light"] .pr2-spec-l p{color:#c9d1db}
+html[data-theme="light"] .pr2-spec .pr2-ic{background:rgba(240,180,0,.18);color:#f0b400}
+html[data-theme="light"] .pr2-spec .pr2-more,html[data-theme="light"] .pr2-spec-list svg{color:#f0b400}
+html[data-theme="light"] .pr2-spec-list li{color:#e6ebf0;background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
+html[data-theme="light"] .pr2-stats{background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.08)}
+html[data-theme="light"] .pr2-stat{background:#fff}
+html[data-theme="light"] .pr2-stat>span,html[data-theme="light"] .pr2-card header p,html[data-theme="light"] .pr2-p i,html[data-theme="light"] .pr2-foot p{color:#6a737d}
+html[data-theme="light"] .pr2-big b,html[data-theme="light"] .pr2-more,html[data-theme="light"] .pr2-foot svg,html[data-theme="light"] .pr2-info svg,html[data-theme="light"] .pr2-spec-list svg{color:#a87800}
+html[data-theme="light"] .pr2-big i,html[data-theme="light"] .pr2-n,html[data-theme="light"] .pr2-info p,html[data-theme="light"] .pr2-nav a{color:#3a434d}
+html[data-theme="light"] .pr2-info{background:#fff8e1;border-color:rgba(200,150,0,.3)}
+html[data-theme="light"] .pr2-info b,html[data-theme="light"] .pr2-p b{color:#111}
+html[data-theme="light"] .pr2-nav a{border-color:rgba(0,0,0,.12);background:#fff}
+html[data-theme="light"] .pr2-ci,html[data-theme="light"] .pr2-ic{background:rgba(240,180,0,.18);color:#8a6200}
+html[data-theme="light"] .pr2-card{background:#fff;border-color:rgba(0,0,0,.09)}
+html[data-theme="light"] .pr2-hot{background:linear-gradient(180deg,#fff6d6,#fff 60%);border-color:rgba(200,150,0,.4)}
+html[data-theme="light"] .pr2-hot .pr2-ic{background:#f0b400;color:#111}
+html[data-theme="light"] .pr2-list li{border-color:rgba(0,0,0,.07)}
+html[data-theme="light"] .pr2-dots{border-color:rgba(0,0,0,.2)}
+html[data-theme="light"] .pr2-foot{border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .pr-note,html[data-theme="light"] .pr-t{background:#fff;border-color:rgba(0,0,0,.1)}
 html[data-theme="light"] .pr-note p,html[data-theme="light"] .pr-t td{color:#3a434d}
 html[data-theme="light"] .pr-note:first-child{background:#fff8e1;border-color:rgba(200,150,0,.35)}
 html[data-theme="light"] .pr-warn{background:#fdecea;border-color:rgba(200,60,50,.3)}

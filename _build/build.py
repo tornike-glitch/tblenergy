@@ -34,6 +34,7 @@ NAV = [
  ('services.html', 'სერვისები', 'Services'),
  ('testing.html', 'გაზომვები', 'Testing'),
  ('projects.html', 'პროექტები', 'Projects'),
+ ('prices.html', 'ფასები', 'Prices'),
  ('contact.html', 'კონტაქტი', 'Contact'),
 ]
 

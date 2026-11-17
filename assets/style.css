@@ -1211,3 +1211,28 @@ html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}
 @media (max-width:860px){.sp-grid,.sp-cols{grid-template-columns:1fr}.sp-art-grid{grid-template-columns:1fr}}
 @media (max-width:640px){.sp-steps,.sp-rel-grid,.sp-svc{grid-template-columns:1fr}.sp-dist{grid-template-columns:1fr 1fr}}
 .prose ul{list-style:disc}.prose ul li{padding-left:4px}
+/* prices */
+.pr-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:clamp(32px,4vw,52px)}
+.pr-note{border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:22px;background:rgba(255,255,255,.02)}
+.pr-note b{display:block;font-size:16.5px;margin-bottom:6px}
+.pr-note p{margin:0;color:#aab4bf;font-size:14.5px;line-height:1.65}
+.pr-note:first-child{border-color:rgba(240,180,0,.35);background:rgba(240,180,0,.06)}
+.pr-warn{border-color:rgba(230,80,70,.35);background:rgba(230,80,70,.07)}
+.pr-warn b{color:#ff8a80}
+.pr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,36px)}
+.pr-h{display:flex;align-items:center;gap:12px;font-size:clamp(19px,1.8vw,22px);margin:0 0 14px}
+.pr-ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:rgba(240,180,0,.14);color:var(--amber);flex:none}
+.pr-ic svg{width:22px;height:22px}
+.pr-t{width:100%;border-collapse:separate;border-spacing:0;border:1px solid rgba(255,255,255,.09);border-radius:14px;overflow:hidden;font-size:15px}
+.pr-t th{background:#1b222b;text-align:left;font-weight:600;font-size:13.5px;padding:13px 18px;color:#e6ebf0}
+.pr-t th:last-child,.pr-t td:last-child{text-align:right;white-space:nowrap}
+.pr-t td{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07);color:#c9d1db}
+.pr-t td:last-child{font-weight:700;color:#fff}
+.pr-t tbody tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.pr-more{display:inline-flex;align-items:center;gap:8px;margin-top:12px;color:var(--amber);font-weight:600;font-size:14.5px}
+.pr-more svg{width:16px;height:16px}
+.pr-foot{margin:36px 0 0;color:#98a3ae;font-size:14px}
+.sp-plink{display:inline-flex;align-items:center;gap:8px;color:var(--amber);font-weight:600}
+.sp-plink svg{width:16px;height:16px}
+@media (max-width:960px){.pr-notes,.pr-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.pr-t td,.pr-t th{padding:12px 12px}.pr-t{font-size:14px}}

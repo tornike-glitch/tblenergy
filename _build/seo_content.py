@@ -323,3 +323,48 @@ ARTICLES.append(dict(slug='blog-earthing.html', date='2026-11-17',
    ('note',('დამიწების გაზომვას Fluke 1625-ით ვატარებთ და შედეგს ოფიციალურ აქტში ვაფორმებთ.',
             'We measure earthing with a Fluke 1625 and document results in an official report.')),
   ], related=['earthing','panels']))
+
+# ---- price list (indicative, "from") ----
+PRICES = [
+ ('alert', ('ავარიული ელექტრიკი 24/7','Emergency electrician 24/7'), 'emergency', [
+   (('ავარიული გამოძახება და დიაგნოსტიკა (დღისით)','Emergency call-out and diagnosis (daytime)'), 30),
+   (('ავარიული გამოძახება და დიაგნოსტიკა (ღამით, 22:00–08:00)','Emergency call-out and diagnosis (night, 22:00–08:00)'), 50),
+   (('ავტომატის შეცვლა','Breaker replacement'), 20),
+   (('დამწვარი როზეტის შეცვლა','Burnt socket replacement'), 15)]),
+ ('wire', ('ელექტროგაყვანილობა','Wiring'), 'installation', [
+   (('გაყვანილობის წერტილი (როზეტი/ჩამრთველი)','Wiring point (socket/switch)'), 20),
+   (('ახალი ხაზის გაყვანა (1 მ)','New cable run (per m)'), 3),
+   (('შტრობა ბეტონში (1 მ)','Wall chasing in concrete (per m)'), 8),
+   (('ბინის სრული გაყვანილობა (1 მ²)','Full apartment wiring (per m²)'), 25)]),
+ ('panel', ('ელექტროფარი და ავტომატები','Panels and breakers'), 'panels', [
+   (('ავტომატის მონტაჟი/შეცვლა','Breaker installation/replacement'), 20),
+   (('დიფ. ავტომატის ან RCD-ის მონტაჟი','RCBO or RCD installation'), 40),
+   (('ძაბვის რელეს მონტაჟი','Voltage relay installation'), 40),
+   (('ბინის ფარის სრული აწყობა','Complete apartment board assembly'), 150)]),
+ ('plug', ('როზეტები და ჩამრთველები','Sockets and switches'), 'installation', [
+   (('როზეტის/ჩამრთველის შეცვლა','Socket/switch replacement'), 10),
+   (('როზეტის/ჩამრთველის მონტაჟი','Socket/switch installation'), 15),
+   (('ახალი წერტილის დამატება (ხაზით)','New point with cable run'), 35),
+   (('ძალოვანი როზეტი (ქურისთვის)','Power socket (for a cooker)'), 35)]),
+ ('bulb', ('განათების მონტაჟი','Lighting installation'), 'installation', [
+   (('სანათის მონტაჟი','Light fitting installation'), 25),
+   (('ჭაღის აწყობა და დაკიდება','Chandelier assembly and hanging'), 40),
+   (('წერტილოვანი სპოტი (1 ცალი)','Spotlight (each)'), 10),
+   (('LED ლენტი (1 მ)','LED strip (per m)'), 10)]),
+ ('search', ('დაზიანების მოძიება','Fault finding'), 'repair', [
+   (('დიაგნოსტიკა (ბინა)','Diagnosis (apartment)'), 40),
+   (('ფარული დაზიანების მოძიება','Hidden fault location'), 60),
+   (('გაყვანილობის სრული შემოწმება (ბინა)','Full wiring inspection (apartment)'), 80)]),
+ ('appl', ('ტექნიკის მიერთება','Appliance connection'), 'installation', [
+   (('ელექტროქურის/ზედაპირის მიერთება','Cooker/hob connection'), 40),
+   (('ბოილერის მიერთება','Water heater connection'), 40),
+   (('კონდიციონერის ელექტრული მიერთება','Air conditioner electrical connection'), 50),
+   (('სარეცხი/ჭურჭლის მანქანის როზეტი','Washing machine/dishwasher socket'), 30)]),
+ ('pro', ('სპეციალიზებული სამუშაოები','Specialist work'), None, [
+   (('დამიწების კონტურის მოწყობა','Earthing system installation'), None),
+   (('დამიწების, იზოლაციის და RCD-ის გაზომვა ოფიციალური აქტით','Earthing, insulation and RCD testing with official report'), None),
+   (('გენერატორის და UPS-ის მიერთება, ავტომატური გადამრთველი (ATS)','Generator and UPS connection, automatic transfer switch (ATS)'), None),
+   (('თერმოგრაფიული შემოწმება','Thermal imaging inspection'), None),
+   (('მაღალი ძაბვის სამუშაოები და ტესტირება','High-voltage work and testing'), None),
+   (('სამედიცინო აპარატურის ელექტროუსაფრთხოება','Medical equipment electrical safety'), None)]),
+]

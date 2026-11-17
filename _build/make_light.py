@@ -20,7 +20,18 @@ EXCLUDE = ['.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.t
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .sp-text p,html[data-theme="light"] .prose p,html[data-theme="light"] .prose ul{color:#3a434d}
+TUNE = '''html[data-theme="light"] .pr-note,html[data-theme="light"] .pr-t{background:#fff;border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .pr-note p,html[data-theme="light"] .pr-t td{color:#3a434d}
+html[data-theme="light"] .pr-note:first-child{background:#fff8e1;border-color:rgba(200,150,0,.35)}
+html[data-theme="light"] .pr-warn{background:#fdecea;border-color:rgba(200,60,50,.3)}
+html[data-theme="light"] .pr-warn b{color:#b3261e}
+html[data-theme="light"] .pr-t th{background:#151a20;color:#fff}
+html[data-theme="light"] .pr-t td{border-color:rgba(0,0,0,.08)}
+html[data-theme="light"] .pr-t td:last-child{color:#111}
+html[data-theme="light"] .pr-t tbody tr:nth-child(even) td{background:#f7f6f2}
+html[data-theme="light"] .pr-ic{color:#a87800}
+html[data-theme="light"] .pr-more,html[data-theme="light"] .sp-plink{color:#a87800}
+html[data-theme="light"] .sp-text p,html[data-theme="light"] .prose p,html[data-theme="light"] .prose ul{color:#3a434d}
 html[data-theme="light"] .sp-two{background:#ebe8e1}
 html[data-theme="light"] .sp-box,html[data-theme="light"] .sp-steps li,html[data-theme="light"] .sp-rel,html[data-theme="light"] .sp-art,html[data-theme="light"] .sp-svc a{background:#fff;border-color:rgba(0,0,0,.1)}
 html[data-theme="light"] .sp-box .checks,html[data-theme="light"] .sp-box .checks li{border-color:rgba(0,0,0,.1)}

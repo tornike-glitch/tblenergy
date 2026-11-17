@@ -207,7 +207,7 @@ def jsonld():
       "image": "https://tblenergy.ge/img/og-cover.jpg",
       "sameAs": ["https://www.facebook.com/tblenergy.ge"],
       "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"},
-      "telephone": "+995500055859", "email": "info@tblenergy.ge", "areaServed": {"@type": "City", "name": "Tbilisi"},
+      "priceRange": "10–150+ ₾", "telephone": "+995500055859", "email": "info@tblenergy.ge", "areaServed": {"@type": "City", "name": "Tbilisi"},
       "address": {"@type": "PostalAddress", "streetAddress": "გურამიშვილი 12ა", "addressLocality": "Tbilisi", "addressCountry": "GE"},
       "description": "ელექტრიკი თბილისში: გამოძახებით და ავარიული ელექტრიკი, ელექტრო გამანაწილებელი ფარები, დაზიანებული გაყვანილობის ძებნა და რემონტი, გენერატორები და UPS, მაღალი ძაბვის სამუშაოები, დამიწება და კონტურების გაზომვა.",
       "knowsAbout": [s['ka'] for s in SERVICES],

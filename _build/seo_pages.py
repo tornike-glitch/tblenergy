@@ -1,6 +1,6 @@
 # Renders dedicated service pages, districts page, articles and sitemap.
 import json, datetime
-from seo_content import SPAGES, DISTRICTS, ARTICLES
+from seo_content import SPAGES, DISTRICTS, ARTICLES, PRICES
 
 SITE = 'https://tblenergy.ge/'
 
@@ -100,6 +100,7 @@ def build_seo(g):
     <p class="eyebrow">{t('როგორ ვმუშაობთ','How we work')}</p>
     <h2 class="h-md">{t('ოთხი მარტივი ნაბიჯი','Four simple steps')}</h2>
     <ol class="sp-steps">{steps_html}</ol>
+    <p class="sp-cred"><a class="sp-plink" href="prices.html">{t('საორიენტაციო ფასები','Indicative prices')}{ICON['arrow']}</a></p>
     <p class="sp-cred">{t('ელექტროუსაფრთხოების V ჯგუფის დაშვება · Fluke-ის აპარატურა · ევროპული სტანდარტები · გარანტია','Group V electrical safety qualification · Fluke instruments · European standards · Warranty')}</p>
   </div>
 </section>
@@ -118,6 +119,46 @@ def build_seo(g):
         write(p['slug'], p['title'], p['desc'], body, extra)
         pages.append((p['slug'], .9))
 
+
+    # ---- prices ----
+    PIC = {
+      'alert':'<path d="M6 17v-5a6 6 0 0 1 12 0v5"/><path d="M4 17h16v3H4z"/><path d="M12 2v2M4.2 5.2l1.4 1.4M19.8 5.2l-1.4 1.4"/>',
+      'wire':'<path d="M3 7h6a3 3 0 0 1 3 3v4a3 3 0 0 0 3 3h6"/><circle cx="3" cy="7" r="1"/><circle cx="21" cy="17" r="1"/>',
+      'panel':'<rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+      'plug':'<path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/>',
+      'bulb':'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+      'search':'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/>',
+      'appl':'<rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6h2"/>',
+      'pro':'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>'}
+    blocks = ''
+    for ic, (hk, he), sid, rows in PRICES:
+        trs = ''
+        for (a, b), pr in rows:
+            val = t(f'{pr} ₾-დან', f'from {pr} ₾') if pr else t('შეთანხმებით', 'On request')
+            trs += f'<tr><td>{t(a,b)}</td><td>{val}</td></tr>'
+        more = f'<a class="pr-more" href="{SPAGES[sid]["slug"]}">{t("სერვისის შესახებ","About this service")}{ICON["arrow"]}</a>' if sid else f'<a class="pr-more" href="testing.html">{t("გაზომვები და აუდიტი","Testing & audit")}{ICON["arrow"]}</a>'
+        blocks += f'<div class="pr-block"><h2 class="pr-h"><span class="pr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{PIC[ic]}</svg></span>{t(hk,he)}</h2><table class="pr-t"><thead><tr><th>{t("სამუშაო","Work")}</th><th>{t("ფასი","Price")}</th></tr></thead><tbody>{trs}</tbody></table>{more}</div>'
+    body = hero([('ფასები', 'Prices', None)], t('ელექტრიკის მომსახურების ფასები', 'Electrician prices'),
+                t('საორიენტაციო ფასები თბილისში. ზუსტ ფასს გეტყვით სამუშაოს დეტალების გარკვევის შემდეგ, სამუშაოს დაწყებამდე.',
+                  'Indicative prices in Tbilisi. We confirm the exact price once we know the details, before any work starts.'))
+    body += f"""<section class="sec pr-sec">
+  <div class="wrap">
+    <div class="pr-notes">
+      <div class="pr-note"><b>{t('ფასები პირობითია','Prices are indicative')}</b><p>{t('ცხრილში მოცემულია მინიმალური, „-დან“ ფასები. საბოლოო ფასი დამოკიდებულია სამუშაოს მოცულობაზე, კედლის მასალაზე, მისაწვდომობაზე და მასალებზე. ზუსტ ფასს გეტყვით ტელეფონით გასაუბრების ან ობიექტის ნახვის შემდეგ, სამუშაოს დაწყებამდე. ფარული ხარჯი არ არის.','The table shows minimum “from” prices. The final price depends on the scope, wall material, access and materials. We confirm the exact price after a phone call or site visit, before work begins. No hidden costs.')}</p></div>
+      <div class="pr-note"><b>{t('რეგიონებშიც ვმუშაობთ','We also work outside Tbilisi')}</b><p>{t('თბილისის გარდა ვმუშაობთ საქართველოს რეგიონებშიც. ასეთ შემთხვევაში ვადასა და ტრანსპორტირების პირობებს წინასწარ შევათანხმებთ.','Besides Tbilisi we work across Georgia. For regional jobs we agree timing and travel in advance.')}</p></div>
+      <div class="pr-note pr-warn"><b>{t('უსაფრთხოების რჩევა','Safety tip')}</b><p>{t('თუ წვის სუნია, ნაპერწკალს ან კვამლს ხედავთ, გათიშეთ მთავარი ავტომატი, ნუ შეეხებით დაზიანებულ ადგილს და დაგვირეკეთ. ხანძრის შემთხვევაში დარეკეთ 112-ზე.','If you smell burning or see sparks or smoke, switch off the main breaker, do not touch the damaged spot and call us. In case of fire, call 112.')}</p></div>
+    </div>
+    <div class="pr-grid">{blocks}</div>
+    <p class="pr-foot">{t('მასალის ღირებულება ფასში არ შედის, თუ სხვა რამ არ არის შეთანხმებული. ყველა შესრულებულ სამუშაოზე გაძლევთ გარანტიას.','Materials are not included unless agreed otherwise. All completed work comes with a warranty.')}</p>
+  </div>
+</section>
+"""
+    body += cta()
+    write('prices.html', 'ელექტრიკის ფასები თბილისში · გაყვანილობა, ფარი, როზეტი, განათება | TBL Energy',
+          'ელექტრიკის მომსახურების ფასები: გამოძახება 30 ₾-დან, გაყვანილობის წერტილი 20 ₾-დან, ბინის სრული გაყვანილობა 25 ₾/მ²-დან, ფარის აწყობა 150 ₾-დან. ზუსტ ფასს გეტყვით სამუშაოს დეტალების გარკვევის შემდეგ.',
+          body, crumbs_ld([('მთავარი', ''), ('ფასები', 'prices.html')]))
+    pages.append(('prices.html', .9))
+
     # ---- districts ----
     chips = ''.join(f'<li>{ICON["pin"]}{t(a,b)}</li>' for a, b in DISTRICTS)
     svc = ''.join(f'<li><a href="{SPAGES[s["id"]]["slug"]}">{t(s["ka"], s["en"])}{ICON["arrow"]}</a></li>' for s in SERVICES)
@@ -132,7 +173,7 @@ def build_seo(g):
       <p>{t('TBL Energy-ის ელექტრიკოსები მუშაობენ მთელ თბილისში: ბინებში, კერძო სახლებში, ოფისებში, მაღაზიებში, რესტორნებსა და საწარმოებში. ავარიულ გამოძახებებზე ვმუშაობთ 24/7, დაგეგმილ სამუშაოებს კი თქვენთვის მოსახერხებელ დროს ვათანხმებთ.','TBL Energy electricians work across Tbilisi: apartments, private houses, offices, shops, restaurants and production sites. We take emergency call-outs 24/7 and schedule planned work at a time that suits you.')}</p>
       <p>{t('ზარისას გვითხარით მისამართი და რა მოხდა, და გეტყვით, როდის შევძლებთ მოსვლას.','Tell us the address and what happened when you call, and we will tell you when we can be there.')}</p>
     </div>
-    <div class="sp-box"><p class="eyebrow">{t('უბნები','Districts')}</p><ul class="sp-dist">{chips}</ul><p class="sp-small">{t('და სხვა უბნები. თუ თქვენი უბანი სიაში არ არის, მაინც დაგვირეკეთ.','And other areas. If yours is not listed, call us anyway.')}</p></div>
+    <div class="sp-box"><p class="eyebrow">{t('უბნები','Districts')}</p><ul class="sp-dist">{chips}</ul><p class="sp-small">{t('და სხვა უბნები. ვმუშაობთ საქართველოს რეგიონებშიც: ვადასა და პირობებს წინასწარ შევათანხმებთ.','And other areas. We also work in the regions of Georgia: timing and terms are agreed in advance.')}</p></div>
   </div>
 </section>
 <section class="sec sp-two"><div class="wrap"><p class="eyebrow">{t('სერვისები','Services')}</p><h2 class="h-md">{t('რას ვაკეთებთ ყველა უბანში','What we do in every district')}</h2><ul class="sp-svc">{svc}<li><a href="testing.html">{t('ელექტრო გაზომვები და აუდიტი','Electrical testing & audit')}{ICON['arrow']}</a></li></ul></div></section>

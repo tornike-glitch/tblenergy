@@ -209,7 +209,9 @@ def jsonld():
       "description": "ელექტრიკი თბილისში: გამოძახებით და ავარიული ელექტრიკი, ელექტრო გამანაწილებელი ფარები, დაზიანებული გაყვანილობის ძებნა და რემონტი, გენერატორები და UPS, მაღალი ძაბვის სამუშაოები, დამიწება და კონტურების გაზომვა.",
       "knowsAbout": [s['ka'] for s in SERVICES],
     }
+    site = {"@context": "https://schema.org", "@type": "WebSite", "name": "TBL Energy", "alternateName": ["TBL Energy ელექტრიკი", "tblenergy.ge"], "url": "https://tblenergy.ge/"}
     faq = {"@context": "https://schema.org", "@type": "FAQPage",
            "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q,qe,a,ae in FAQ]}
-    return ('<script type="application/ld+json">' + json.dumps(biz, ensure_ascii=False) + '</script>\n'
+    return ('<script type="application/ld+json">' + json.dumps(site, ensure_ascii=False) + '</script>\n'
+            '<script type="application/ld+json">' + json.dumps(biz, ensure_ascii=False) + '</script>\n'
             '<script type="application/ld+json">' + json.dumps(faq, ensure_ascii=False) + '</script>\n')

@@ -42,6 +42,13 @@ NAV = [
 LOGO = '''<svg class="brand-mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="boltd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd75e"/><stop offset="1" stop-color="#f0b400"/></linearGradient><linearGradient id="shd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d6f99"/><stop offset="1" stop-color="#6fa8d6"/></linearGradient></defs><path d="M60 9 Q80 11 100 19 V58 Q100 92 60 112 Q20 92 20 58 V19 Q40 11 60 9 Z" fill="none" stroke="url(#shd)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path fill="#eef1f4" d="M6 38 H54 V48 H6 Z"/><path fill="#eef1f4" fill-rule="evenodd" transform="translate(58,0) scale(0.68,1) translate(-14,0)" d="M14 38 H41 C51 38 56 44 56 51 C56 56 53.5 59.5 49.5 61.5 C55 63.5 58 68.5 58 75 C58 84 52 90 42 90 H14 Z M27 47 V57.5 H39.5 C43.5 57.5 45.5 55.5 45.5 52.2 C45.5 49 43.5 47 39.5 47 Z M27 66.5 V81 H40.5 C44.5 81 47 78.5 47 73.8 C47 69.2 44.5 66.5 40.5 66.5 Z"/><path fill="#eef1f4" d="M91 38 H101 V80 H114 V90 H91 Z"/><path d="M44 3 L18 64 H31 L21 117 L49 52 H36 Z" fill="url(#boltd)" stroke="#0d1116" stroke-width="4" stroke-linejoin="round" paint-order="stroke"/><g stroke="#141414" stroke-width="2.2" fill="none" stroke-linecap="round"><path d="M30 56 H38 L35 66"/></g><g fill="#ffd75e" stroke="#141414" stroke-width="2"><circle cx="30" cy="56" r="2.6"/><circle cx="38" cy="56" r="2.6"/><circle cx="35" cy="66" r="2.6"/></g></svg>'''
 
 SITE = 'https://tblenergy.ge/'
+import hashlib as _hl, os as _os
+def _ver():
+    h=_hl.md5()
+    for f in ('assets/style.css','assets/light.css','assets/app.js'):
+        h.update(open(_os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),f),'rb').read())
+    return h.hexdigest()[:8]
+VER=_ver()
 
 def head(title, desc, extra='', page='index.html'):
     return f'''<!DOCTYPE html>
@@ -72,8 +79,8 @@ def head(title, desc, extra='', page='index.html'):
 <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/light.css">
+<link rel="stylesheet" href="assets/style.css?v={VER}">
+<link rel="stylesheet" href="assets/light.css?v={VER}">
 {extra}<script>try{{var l=localStorage.getItem('btl-lang');if(l==='en'||l==='ka')document.documentElement.setAttribute('data-lang',l);var th=localStorage.getItem('tbl-theme');if(th==='light')document.documentElement.setAttribute('data-theme','light')}}catch(e){{}}</script>
 </head>
 <body>
@@ -148,7 +155,7 @@ def footer():
 </footer>
 <a class="msgr" href="{MSG}" target="_blank" rel="noopener" aria-label="Messenger"><span class="msgr-tip">{t('მოგვწერეთ Messenger-ში','Message us on Messenger')}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.99-.88c.17-.07.36-.09.53-.04.92.25 1.89.38 2.9.38 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm6 7.46-2.94 4.67a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.67a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63z"/></svg></a>
 <div class="mbar"><a href="{TEL}">{ICON['phone']}<span>{t('დარეკვა','Call')}</span><span class="mono">{PHONE}</span></a><a class="mbar-m" href="{MSG}" target="_blank" rel="noopener" aria-label="Messenger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.99-.88c.17-.07.36-.09.53-.04.92.25 1.89.38 2.9.38 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm6 7.46-2.94 4.67a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.67a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63z"/></svg></a></div>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v={VER}"></script>
 </body>
 </html>
 '''

@@ -12,7 +12,7 @@ SRC = os.path.join(ROOT, 'assets', 'style.css')
 OUT = os.path.join(ROOT, 'assets', 'light.css')
 
 # selectors that live on photos / dark illustration panels: keep as they are
-EXCLUDE = ['.ny-card-cta', '.ny-cta', '.pr2-spec', '.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
+EXCLUDE = ['.ny-scene', '.ny-card-cta', '.ny-cta', '.pr2-spec', '.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb .ct-ic', '.tc-photo .tc-n', '.tc-photo .tc-ic', '.pj', '.hero-badges', '.plb', '.lb', '.vis', '.gfx', '.stage', '.mod-vis', '.mod-top',
            '.qf-tag', '.sd-tag', 'figcaption', '.lcd', '.report .doc', '.light', '.cta', '.ph-body',
            '.ph-screen', '.ph-brand', '.ph-num', '.ph-call', '.ph-icon', '.bub', '.plan', '.dim', '.db',
            '.chip', '.encl', '.rail', '.wires', '.bk', '.tg ', '.tool', '.sheet', '.hr', '.rl', '.pass',
@@ -20,7 +20,8 @@ EXCLUDE = ['.ny-card-cta', '.ny-cta', '.pr2-spec', '.ct-mail .ct-ic', '.ct-call'
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .ny-card-cta{background:radial-gradient(120% 120% at 100% 0%,rgba(245,189,26,.18),transparent 55%),#151a20}
+TUNE = '''html[data-theme="light"] .ny-scene{background:radial-gradient(80% 70% at 50% 60%,#1d2a3d 0,#0d1116 75%)}
+html[data-theme="light"] .ny-card-cta{background:radial-gradient(120% 120% at 100% 0%,rgba(245,189,26,.18),transparent 55%),#151a20}
 html[data-theme="light"] .ny-cta-top b{color:#fff}
 html[data-theme="light"] .ny-cta-list li{color:#e6ebf0;background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
 html[data-theme="light"] .mnav a[href="new-year.html"]{color:#b0122a}

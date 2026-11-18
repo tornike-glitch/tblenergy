@@ -306,5 +306,5 @@ def write_sitemap(out, pages):
     base = [('', 1.0), ('services.html', .9), ('testing.html', .8), ('medical.html', .7), ('projects.html', .7), ('contact.html', .8)]
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for p, pr in base + pages:
-        x += f'  <url><loc>{SITE}{p}</loc><lastmod>{d}</lastmod><priority>{pr}</priority></url>\n'
+        x += f'  <url><loc>{SITE}{p[:-5] if p.endswith(".html") else p}</loc><lastmod>{d}</lastmod><priority>{pr}</priority></url>\n'
     open(out, 'w').write(x + '</urlset>\n')

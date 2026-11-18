@@ -187,9 +187,18 @@ def page_header(crumb_ka, crumb_en, h1, lead, img, anchors=''):
 </section>
 '''
 
+import re as _re
+def clean_links(html):
+    # internal links: index.html -> /, page.html -> /page (GitHub Pages serves both)
+    html = _re.sub(r'href="index\.html(#[^"]*)?"', lambda m: 'href="/' + (m.group(1) or '') + '"', html)
+    html = _re.sub(r'href="([a-z0-9-]+)\.html(#[^"]*)?"', lambda m: 'href="/' + m.group(1) + (m.group(2) or '') + '"', html)
+    html = _re.sub(r'(https://tblenergy\.ge/)index\.html', r'\1', html)
+    html = _re.sub(r'(https://tblenergy\.ge/[a-z0-9-]+)\.html', r'\1', html)
+    return html
+
 def write(name, title, desc, body, extra=''):
     with open(os.path.join(OUT, name), 'w') as f:
-        f.write(head(title, desc, extra, name) + header(name) + body + footer())
+        f.write(clean_links(head(title, desc, extra, name) + header(name) + body + footer()))
 
 # ---------------- HOME ----------------
 board = build_board(t, ICON)

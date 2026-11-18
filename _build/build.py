@@ -35,6 +35,7 @@ NAV = [
  ('testing.html', 'გაზომვები', 'Testing'),
  ('projects.html', 'პროექტები', 'Projects'),
  ('prices.html', 'ფასები', 'Prices'),
+ ('new-year.html', 'საახალწლო', 'New Year'),
  ('contact.html', 'კონტაქტი', 'Contact'),
 ]
 
@@ -79,8 +80,15 @@ def head(title, desc, extra='', page='index.html'):
 <a class="skip" href="#main">{t('მთავარ შინაარსზე გადასვლა','Skip to content')}</a>
 '''
 
+HAT = '<svg class="xhat" viewBox="0 0 40 34" aria-hidden="true"><path d="M5 25 C8 13 15 5 25 4 C31 3.6 35 7 35.5 12 C33 9.6 29.5 9.4 27 11.5 C24 14 23 19.5 23.5 25 Z" fill="#d7263d"/><path d="M5 25 C8 13 15 5 25 4 C27 3.9 28.7 4.2 30.2 4.9 C22 6.5 14.5 14 11.5 25 Z" fill="#ff4d5e" opacity=".45"/><rect x="2" y="23" width="25" height="8" rx="4" fill="#f4f1ea"/><circle cx="35.5" cy="13.5" r="4.3" fill="#f4f1ea"/></svg>'
+
+def navlabel(h, ka, en):
+    if h == 'new-year.html':
+        return f'<span class="xmas">{HAT}{t(ka,en)}</span>'
+    return t(ka, en)
+
 def header(cur):
-    links = ''.join(f'<a href="{h}"{" aria-current=\"page\"" if h==cur else ""}>{t(ka,en)}</a>' for h,ka,en in NAV)
+    links = ''.join(f'<a href="{h}"{" aria-current=\"page\"" if h==cur else ""}{" class=\"nav-xmas\"" if h=="new-year.html" else ""}>{navlabel(h,ka,en)}</a>' for h,ka,en in NAV)
     from services_part import SERVICES as _SV
     _arrow = ICON["arrow"].replace("<svg","<svg width=\"20\" height=\"20\"")
     _chev = '<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'
@@ -93,7 +101,7 @@ def header(cur):
         if h == 'services.html':
             mlinks += f'<div class="msub"><button type="button" class="msub-t" id="msub-t" aria-expanded="false" aria-controls="msub-l"{cur_attr}>{t(ka,en)}{_chev}</button><div class="msub-l" id="msub-l">{_sub}</div></div>'
         else:
-            mlinks += f'<a href="{h}"{cur_attr}>{t(ka,en)}{_arrow}</a>'
+            mlinks += f'<a href="{h}"{cur_attr}>{navlabel(h,ka,en)}{_arrow}</a>'
     return f'''<header class="site-header">
   <div class="wrap hdr">
     <a class="brand" href="index.html" aria-label="TBL Energy">{LOGO}<span class="brand-name"><b>TBL ENERGY</b><small>Electrical services</small></span></a>

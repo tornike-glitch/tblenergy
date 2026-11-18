@@ -20,7 +20,9 @@ EXCLUDE = ['.pr2-spec', '.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .ny-card{background:#fff;border-color:rgba(0,0,0,.1)}
+TUNE = '''html[data-theme="light"] .mnav a[href="new-year.html"]{color:#b0122a}
+html[data-theme="light"] .nav-xmas{color:#b0122a!important}
+html[data-theme="light"] .ny-card{background:#fff;border-color:rgba(0,0,0,.1)}
 html[data-theme="light"] .ny-card p,html[data-theme="light"] .ny-form-l p:not(.eyebrow){color:#4a535e}
 html[data-theme="light"] .ny-safe{background:#fff8e1;border-color:rgba(200,150,0,.35)}
 html[data-theme="light"] .ny-safe p{color:#3a434d}

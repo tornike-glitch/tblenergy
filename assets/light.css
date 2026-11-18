@@ -227,6 +227,8 @@ html[data-theme="light"] .ny-safe b{color:var(--amber-text)}
 html[data-theme="light"] .ny-form-l p:not(.eyebrow){color:#2d3237}
 html[data-theme="light"] .ny-open{color:var(--amber-text)}
 html[data-theme="light"] .ny-form{background:#151a20;border:1px solid rgba(21,26,32,0.115)}
+html[data-theme="light"] .mnav a[href="new-year.html"]{color:#b0122a}
+html[data-theme="light"] .nav-xmas{color:#b0122a!important}
 html[data-theme="light"] .ny-card{background:#fff;border-color:rgba(0,0,0,.1)}
 html[data-theme="light"] .ny-card p,html[data-theme="light"] .ny-form-l p:not(.eyebrow){color:#4a535e}
 html[data-theme="light"] .ny-safe{background:#fff8e1;border-color:rgba(200,150,0,.35)}

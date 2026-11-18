@@ -1351,3 +1351,15 @@ html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}
 @media (max-width:860px){.ny-form-wrap{grid-template-columns:1fr}.ny-form-l{position:static}.ny-form iframe{height:2500px}}
 @media (max-width:520px){.ny-cards{grid-template-columns:1fr}.ny-banner{border-radius:14px}}
 @media (max-width:640px){.ny-safe{padding:16px 18px;gap:10px}.ny-safe p,.ny-safe b{font-size:14.5px!important;line-height:1.6!important}.ny-safe>span{font-size:18px}.ny-cards{grid-template-columns:1fr 1fr!important;gap:10px}.ny-card{padding:16px}.ny-em{font-size:24px}.ny-card b{font-size:15px;margin:10px 0 4px}.ny-card p{font-size:13px;line-height:1.5}}
+/* New Year nav item */
+.xmas{position:relative;display:inline-block}
+.xhat{position:absolute;left:-11px;top:-15px;width:24px;height:21px;transform:rotate(-16deg);transform-origin:60% 90%;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35));transition:transform .35s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
+.nav-xmas{color:#ffe6a3!important}
+.nav-xmas:hover .xhat,.mnav a:hover .xhat{transform:rotate(-4deg) translateY(-2px)}
+.nav-xmas::after{background:linear-gradient(90deg,#d7263d,#f5bd1a)!important}
+.nav-xmas .xmas::before{content:"";position:absolute;inset:-6px -10px;border-radius:999px;background:radial-gradient(60% 80% at 50% 50%,rgba(245,189,26,.14),transparent 70%);z-index:-1}
+.mnav .xhat{left:-10px;top:-14px;width:22px;height:19px}
+@media (prefers-reduced-motion:reduce){.xhat{transition:none}}
+.mnav .xmas{margin-left:12px}
+.mnav .xhat{left:-12px;top:-12px}
+.mnav a[href="new-year.html"]{color:#ffe6a3}

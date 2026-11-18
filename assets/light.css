@@ -219,6 +219,21 @@ html[data-theme="light"] .pr2-more{color:var(--amber-text)}
 html[data-theme="light"] .pr2-foot{border-top:1px solid rgba(21,26,32,0.092)}
 html[data-theme="light"] .pr2-foot svg{color:var(--amber-text)}
 html[data-theme="light"] .pr2-foot p{color:#474c51}
+html[data-theme="light"] .ny-banner{border:1px solid rgba(21,26,32,0.092)}
+html[data-theme="light"] .ny-card{border:1px solid rgba(21,26,32,0.103);background:rgba(21,26,32,0.023)}
+html[data-theme="light"] .ny-card p{color:#3e4348}
+html[data-theme="light"] .ny-safe p{color:#282d32}
+html[data-theme="light"] .ny-safe b{color:var(--amber-text)}
+html[data-theme="light"] .ny-form-l p:not(.eyebrow){color:#2d3237}
+html[data-theme="light"] .ny-open{color:var(--amber-text)}
+html[data-theme="light"] .ny-form{background:#151a20;border:1px solid rgba(21,26,32,0.115)}
+html[data-theme="light"] .ny-card{background:#fff;border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .ny-card p,html[data-theme="light"] .ny-form-l p:not(.eyebrow){color:#4a535e}
+html[data-theme="light"] .ny-safe{background:#fff8e1;border-color:rgba(200,150,0,.35)}
+html[data-theme="light"] .ny-safe p{color:#3a434d}
+html[data-theme="light"] .ny-safe b,html[data-theme="light"] .ny-open{color:#a87800}
+html[data-theme="light"] .ny-form-sec{background:#ebe8e1}
+html[data-theme="light"] .ny-form{border-color:rgba(0,0,0,.1)}
 html[data-theme="light"] .pr2-spec{background:radial-gradient(120% 140% at 0% 0%,rgba(240,180,0,.16),transparent 55%),#151a20}
 html[data-theme="light"] .pr2-spec h2{color:#fff}
 html[data-theme="light"] .pr2-spec-l p{color:#c9d1db}

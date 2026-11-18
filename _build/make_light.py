@@ -20,7 +20,14 @@ EXCLUDE = ['.pr2-spec', '.ct-mail .ct-ic', '.ct-call', '.ct-msg .ct-ic', '.ct-fb
            '.tbl td.dev span', '.btn-primary', '.mbar a', '.hero-photo::after', '.skip', '.cards3', '.big-phone',
            '.channels', '.filters', '.checks', '.tests', '.tbl th', '.tbl td', '.tbl{', '.svc-row', '.steps .n']
 
-TUNE = '''html[data-theme="light"] .pr2-spec{background:radial-gradient(120% 140% at 0% 0%,rgba(240,180,0,.16),transparent 55%),#151a20}
+TUNE = '''html[data-theme="light"] .ny-card{background:#fff;border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .ny-card p,html[data-theme="light"] .ny-form-l p:not(.eyebrow){color:#4a535e}
+html[data-theme="light"] .ny-safe{background:#fff8e1;border-color:rgba(200,150,0,.35)}
+html[data-theme="light"] .ny-safe p{color:#3a434d}
+html[data-theme="light"] .ny-safe b,html[data-theme="light"] .ny-open{color:#a87800}
+html[data-theme="light"] .ny-form-sec{background:#ebe8e1}
+html[data-theme="light"] .ny-form{border-color:rgba(0,0,0,.1)}
+html[data-theme="light"] .pr2-spec{background:radial-gradient(120% 140% at 0% 0%,rgba(240,180,0,.16),transparent 55%),#151a20}
 html[data-theme="light"] .pr2-spec h2{color:#fff}
 html[data-theme="light"] .pr2-spec-l p{color:#c9d1db}
 html[data-theme="light"] .pr2-spec .pr2-ic{background:rgba(240,180,0,.18);color:#f0b400}

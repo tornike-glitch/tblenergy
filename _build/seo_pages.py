@@ -189,6 +189,51 @@ def build_seo(g):
           body, crumbs_ld([('მთავარი', ''), ('ფასები', 'prices.html')]))
     pages.append(('prices.html', .9))
 
+
+    # ---- New Year lighting landing ----
+    FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSdixJAs5gOwKYSH7d4GzHBMn48QISJJWLcGOxNMKuahylDV6g/viewform?embedded=true'
+    FORM_OPEN = 'https://docs.google.com/forms/d/e/1FAIpQLSdixJAs5gOwKYSH7d4GzHBMn48QISJJWLcGOxNMKuahylDV6g/viewform'
+    ny_items = [('🎄','ნაძვის ხე','Christmas tree','დადგმა, მორთვა და განათება ოფისში ან შენობის წინ','Set-up, decoration and lighting in the office or outside'),
+                ('🏢','შენობის ფასადი','Building facade','კონტურის განათება, ფარდა-გირლიანდები, ფანჯრები','Outline lighting, curtain lights, windows'),
+                ('🌳','გარე სივრცე','Outdoor areas','ხეები, შესასვლელი, ეზო და ავტოსადგომი','Trees, entrance, yard and parking'),
+                ('✨','ოფისის ინტერიერი','Office interior','მისაღები, საერთო სივრცე, სამუშაო ზონები','Reception, common areas, work zones')]
+    cards = ''.join(f'<div class="ny-card"><span class="ny-em" aria-hidden="true">{e}</span><b>{t(a,b)}</b><p>{t(c,d)}</p></div>' for e,a,b,c,d in ny_items)
+    nsteps = [('შეავსეთ ფორმა','Fill in the form','2 წუთი: რა სივრცე და რა გინდათ','2 minutes: which space and what you want'),
+              ('იდეა და ფასი 24 საათში','Idea and price in 24 hours','საჭიროებისას სივრცეს ადგილზე ვნახავთ','We visit the site if needed'),
+              ('მონტაჟი','Installation','თქვენთვის მოსახერხებელ დროს, შაბათ-კვირის ჩათვლით','At a time that suits you, weekends included'),
+              ('დემონტაჟი','Removal','დღესასწაულების შემდეგ ყველაფერს ჩვენ მოვხსნით','After the holidays we take it all down')]
+    st = ''.join(f'<li><span class="mono">{i+1:02d}</span><b>{t(a,b)}</b><p>{t(c,d)}</p></li>' for i,(a,b,c,d) in enumerate(nsteps))
+    body = hero([('საახალწლო განათება', 'New Year lighting', None)], t('საახალწლო განათება თქვენი ოფისისთვის', 'New Year lighting for your office'),
+                t('ნაძვის ხე, ფასადი, ეზო თუ ინტერიერი: იდეიდან მონტაჟამდე და დემონტაჟამდე, სრულად ჩვენ მოვაწყობთ.',
+                  'Tree, facade, yard or interior: from idea to installation and removal, we handle it all.'))
+    body += f"""<section class="sec ny">
+  <div class="wrap">
+    <figure class="ny-banner"><img src="img/email/ny-hero.jpg" alt="საახალწლო განათება ოფისისთვის – TBL Energy" width="1200" height="600"></figure>
+    <div class="ny-cards">{cards}</div>
+    <div class="ny-safe"><span aria-hidden="true">⚡</span><p>{t('<b>ჩვენ პროფესიონალი ელექტრიკოსები ვართ.</b> განათებას ვამონტაჟებთ ელექტროუსაფრთხოების სტანდარტების დაცვით, რომ თქვენი ოფისი მთელი სადღესასწაულო სეზონი უწყვეტად და უსაფრთხოდ ანათებდეს.','<b>We are professional electricians.</b> We install lighting to electrical safety standards so your office shines safely all season long.')}</p></div>
+    <p class="eyebrow ny-ey">{t('როგორ ვმუშაობთ','How it works')}</p>
+    <ol class="sp-steps">{st}</ol>
+  </div>
+</section>
+<section class="sec ny-form-sec" id="form">
+  <div class="wrap ny-form-wrap">
+    <div class="ny-form-l">
+      <p class="eyebrow">{t('მოთხოვნა','Request')}</p>
+      <h2 class="h-md">{t('დაჯავშნეთ მონტაჟის თარიღი','Book your installation date')}</h2>
+      <p>{t('შეავსეთ ფორმა და 24 საათში დაგიკავშირდებით იდეით და ფასით. საახალწლო გრაფიკი სწრაფად ივსება, ამიტომ თარიღი დროულად დაჯავშნეთ.','Fill in the form and we will get back to you within 24 hours with an idea and a price. The holiday schedule fills up fast, so book early.')}</p>
+      <a class="btn btn-primary" href="{TEL}">{ICON['phone']}<span class="mono">{PHONE}</span></a>
+      <a class="ny-open" href="{FORM_OPEN}" target="_blank" rel="noopener">{t('ფორმის ცალკე გახსნა','Open the form in a new tab')}{ICON['arrow']}</a>
+    </div>
+    <div class="ny-form"><iframe src="{FORM}" title="საახალწლო განათების მოთხოვნა" loading="lazy">იტვირთება…</iframe></div>
+  </div>
+</section>
+"""
+    body += cta()
+    write('new-year.html', 'საახალწლო განათება ოფისისთვის · ნაძვის ხე, ფასადი, ეზო | TBL Energy',
+          'ოფისის საახალწლო მორთვა და განათება თბილისში: ნაძვის ხე, შენობის ფასადი, ეზო და ინტერიერი. იდეა, უსაფრთხო მონტაჟი და დემონტაჟი. მოთხოვნა ონლაინ.',
+          body, crumbs_ld([('მთავარი', ''), ('საახალწლო განათება', 'new-year.html')]))
+    pages.append(('new-year.html', .7))
+
     # ---- districts ----
     chips = ''.join(f'<li>{ICON["pin"]}{t(a,b)}</li>' for a, b in DISTRICTS)
     svc = ''.join(f'<li><a href="{SPAGES[s["id"]]["slug"]}">{t(s["ka"], s["en"])}{ICON["arrow"]}</a></li>' for s in SERVICES)

@@ -222,9 +222,18 @@ def build_seo(g):
       <h2 class="h-md">{t('გამოგვიგზავნეთ მოთხოვნა 🎄','Send us a request 🎄')}</h2>
       <p>{t('შეავსეთ ფორმა და 24 საათში დაგიკავშირდებით იდეით და ფასით. საახალწლო გრაფიკი სწრაფად ივსება, ამიტომ თარიღი დროულად დაჯავშნეთ.','Fill in the form and we will get back to you within 24 hours with an idea and a price. The holiday schedule fills up fast, so book early.')}</p>
       <a class="btn btn-primary" href="{TEL}">{ICON['phone']}<span class="mono">{PHONE}</span></a>
-      <a class="ny-open" href="{FORM_OPEN}" target="_blank" rel="noopener">{t('ფორმის ცალკე გახსნა','Open the form in a new tab')}{ICON['arrow']}</a>
     </div>
-    <div class="ny-form"><iframe src="{FORM}" title="საახალწლო განათების მოთხოვნა" loading="lazy">იტვირთება…</iframe></div>
+    <div class="ny-card-cta">
+      <div class="ny-cta-top"><span class="ny-cta-ic" aria-hidden="true">🎄</span><div><b>{t('საახალწლო განათების მოთხოვნა','New Year lighting request')}</b><small class="ny-cta-meta">{t('Google Form · 2 წუთი','Google Form · 2 minutes')}</small></div></div>
+      <ul class="ny-cta-list">
+        <li>{t('კომპანია და საკონტაქტო პირი','Company and contact person')}</li>
+        <li>{t('ოფისის მისამართი','Office address')}</li>
+        <li>{t('რა გინდათ მოვრთოთ: ნაძვის ხე, ფასადი, ეზო, ინტერიერი','What to decorate: tree, facade, yard, interior')}</li>
+        <li>{t('სასურველი თარიღი','Preferred date')}</li>
+      </ul>
+      <a class="btn btn-primary ny-cta-btn" href="{FORM_OPEN}" target="_blank" rel="noopener">{t('ფორმის შევსება','Fill in the form')}{ICON['arrow']}</a>
+      <p class="ny-cta-note">{t('ფორმა ახალ ფანჯარაში გაიხსნება. 24 საათში დაგიკავშირდებით იდეით და ფასით.','The form opens in a new tab. We will get back to you within 24 hours with an idea and a price.')}</p>
+    </div>
   </div>
 </section>
 """

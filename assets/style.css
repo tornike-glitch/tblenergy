@@ -1368,3 +1368,15 @@ html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}
 .hdr-tools{flex-shrink:0;margin-left:8px}
 @media (max-width:1560px){.nav a{padding:8px 9px;font-size:14px}.hdr{gap:20px}}
 @media (max-width:1440px){.brand-name small{display:none}}
+.ny-form-wrap{align-items:center}
+.ny-card-cta{border-radius:22px;padding:clamp(24px,3vw,36px);background:radial-gradient(120% 120% at 100% 0%,rgba(245,189,26,.16),transparent 55%),#121820;border:1px solid rgba(240,180,0,.3)}
+.ny-cta-top{display:flex;align-items:center;gap:14px}
+.ny-cta-ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:28px;background:rgba(245,189,26,.14)}
+.ny-cta-top b{display:block;font-size:19px;color:#fff}
+.ny-cta-meta{display:block;margin-top:2px;font-size:13.5px;color:#98a3ae}
+.ny-cta-list{list-style:none;margin:22px 0 24px;padding:0;display:grid;gap:10px}
+.ny-cta-list li{position:relative;padding:12px 14px 12px 42px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);font-size:15px;color:#e6ebf0}
+.ny-cta-list li::before{content:"";position:absolute;left:16px;top:50%;width:12px;height:7px;border-left:2px solid var(--amber);border-bottom:2px solid var(--amber);transform:translateY(-70%) rotate(-45deg)}
+.ny-cta-btn{width:100%;justify-content:center;font-size:16px;padding:16px 20px}
+.ny-cta-btn svg{width:18px;height:18px}
+.ny-cta-note{margin:14px 0 0;font-size:13.5px;color:#98a3ae;text-align:center}

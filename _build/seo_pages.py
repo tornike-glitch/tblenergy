@@ -219,7 +219,7 @@ def build_seo(g):
   <div class="wrap ny-form-wrap">
     <div class="ny-form-l">
       <p class="eyebrow">{t('მოთხოვნა','Request')}</p>
-      <h2 class="h-md">{t('დაჯავშნეთ მონტაჟის თარიღი','Book your installation date')}</h2>
+      <h2 class="h-md">{t('გამოგვიგზავნეთ მოთხოვნა 🎄','Send us a request 🎄')}</h2>
       <p>{t('შეავსეთ ფორმა და 24 საათში დაგიკავშირდებით იდეით და ფასით. საახალწლო გრაფიკი სწრაფად ივსება, ამიტომ თარიღი დროულად დაჯავშნეთ.','Fill in the form and we will get back to you within 24 hours with an idea and a price. The holiday schedule fills up fast, so book early.')}</p>
       <a class="btn btn-primary" href="{TEL}">{ICON['phone']}<span class="mono">{PHONE}</span></a>
       <a class="ny-open" href="{FORM_OPEN}" target="_blank" rel="noopener">{t('ფორმის ცალკე გახსნა','Open the form in a new tab')}{ICON['arrow']}</a>

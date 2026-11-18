@@ -1363,3 +1363,8 @@ html[data-theme="light"] .brand-mark [stroke="#0d1116"]{stroke:#f6f5f1}
 .mnav .xmas{margin-left:12px}
 .mnav .xhat{left:-12px;top:-12px}
 .mnav a[href="new-year.html"]{color:#ffe6a3}
+/* header: keep nav from colliding with tools */
+.nav{flex-shrink:0}
+.hdr-tools{flex-shrink:0;margin-left:8px}
+@media (max-width:1560px){.nav a{padding:8px 9px;font-size:14px}.hdr{gap:20px}}
+@media (max-width:1440px){.brand-name small{display:none}}

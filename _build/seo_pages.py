@@ -199,7 +199,7 @@ def build_seo(g):
                 ('✨','ოფისის ინტერიერი','Office interior','მისაღები, საერთო სივრცე, სამუშაო ზონები','Reception, common areas, work zones')]
     cards = ''.join(f'<div class="ny-card"><span class="ny-em" aria-hidden="true">{e}</span><b>{t(a,b)}</b><p>{t(c,d)}</p></div>' for e,a,b,c,d in ny_items)
     nsteps = [('შეავსეთ ფორმა','Fill in the form','2 წუთი: რა სივრცე და რა გინდათ','2 minutes: which space and what you want'),
-              ('იდეა და ფასი 24 საათში','Idea and price in 24 hours','საჭიროებისას სივრცეს ადგილზე ვნახავთ','We visit the site if needed'),
+              ('იდეა და ღირებულება 24 საათში','Idea and cost in 24 hours','საჭიროებისას სივრცეს ადგილზე ვნახავთ','We visit the site if needed'),
               ('მონტაჟი','Installation','თქვენთვის მოსახერხებელ დროს, შაბათ-კვირის ჩათვლით','At a time that suits you, weekends included'),
               ('დემონტაჟი','Removal','დღესასწაულების შემდეგ ყველაფერს ჩვენ მოვხსნით','After the holidays we take it all down')]
     st = ''.join(f'<li><span class="mono">{i+1:02d}</span><b>{t(a,b)}</b><p>{t(c,d)}</p></li>' for i,(a,b,c,d) in enumerate(nsteps))
@@ -220,7 +220,7 @@ def build_seo(g):
     <div class="ny-form-l">
       <p class="eyebrow">{t('მოთხოვნა','Request')}</p>
       <h2 class="h-md">{t('გამოგვიგზავნეთ მოთხოვნა 🎄','Send us a request 🎄')}</h2>
-      <p>{t('შეავსეთ ფორმა და 24 საათში დაგიკავშირდებით იდეით და ფასით. საახალწლო გრაფიკი სწრაფად ივსება, ამიტომ თარიღი დროულად დაჯავშნეთ.','Fill in the form and we will get back to you within 24 hours with an idea and a price. The holiday schedule fills up fast, so book early.')}</p>
+      <p>{t('შეავსეთ ფორმა და 24 საათში დაგიკავშირდებით იდეით და ღირებულებით. საახალწლო გრაფიკი სწრაფად ივსება, ამიტომ თარიღი დროულად დაჯავშნეთ.','Fill in the form and we will get back to you within 24 hours with an idea and a price. The holiday schedule fills up fast, so book early.')}</p>
       <a class="btn btn-primary" href="{TEL}">{ICON['phone']}<span class="mono">{PHONE}</span></a>
     </div>
     <div class="ny-scene">

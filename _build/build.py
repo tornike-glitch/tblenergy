@@ -150,7 +150,7 @@ def footer():
       </ul>
     </div>
   </div>
-  <div class="wrap ft-bottom"><span>© 2026 TBL Energy</span><span>{t('ყველა სამუშაოზე გარანტია','All work under warranty')}</span></div>
+  <div class="wrap ft-bottom"><span>© 2026 TBL Energy</span><span>{t('ყველა სამუშაოზე გარანტია','All work under warranty')}</span><a href="privacy.html">{t('კონფიდენციალურობა','Privacy')}</a></div>
 </footer>
 <a class="msgr" href="{MSG}" target="_blank" rel="noopener" aria-label="Messenger"><span class="msgr-tip">{t('მოგვწერეთ Messenger-ში','Message us on Messenger')}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.99-.88c.17-.07.36-.09.53-.04.92.25 1.89.38 2.9.38 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm6 7.46-2.94 4.67a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.67a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63z"/></svg></a>
 <div class="mbar"><a href="{TEL}">{ICON['phone']}<span>{t('დარეკვა','Call')}</span><span class="mono">{PHONE}</span></a><a class="mbar-m" href="{MSG}" target="_blank" rel="noopener" aria-label="Messenger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.99-.88c.17-.07.36-.09.53-.04.92.25 1.89.38 2.9.38 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm6 7.46-2.94 4.67a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.67a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63z"/></svg></a></div>

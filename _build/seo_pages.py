@@ -298,6 +298,33 @@ def build_seo(g):
           'პრაქტიკული რჩევები ელექტრიკოსისგან: რატომ ამოგდებს ავტომატი, რა არის RCD, როგორ დავგეგმოთ ელექტროგაყვანილობა რემონტისას და რატომ არის მნიშვნელოვანი დამიწება.',
           body, crumbs_ld([('მთავარი', ''), ('რჩევები', 'blog.html')]))
     pages.append(('blog.html', .6))
+
+    # ---- privacy ----
+    def sec(hka, hen, pka, pen): return f'<h2>{t(hka,hen)}</h2><p>{t(pka,pen)}</p>'
+    html = sec('ვინ ვართ', 'Who we are',
+        'TBL Energy (tblenergy.ge) არის ელექტრო მომსახურების კომპანია თბილისში. მისამართი: გურამიშვილი 12ა, თბილისი. ელფოსტა: info@tblenergy.ge, ტელეფონი: +995 500 05 58 59.',
+        'TBL Energy (tblenergy.ge) is an electrical services company in Tbilisi. Address: Guramishvili 12a, Tbilisi. Email: info@tblenergy.ge, phone: +995 500 05 58 59.')
+    html += sec('რა მონაცემებს ვაგროვებთ', 'What data we collect',
+        'როცა ავსებთ ჩვენს ფორმას (საიტზე, Google Forms-ში ან Facebook/Instagram-ის სარეკლამო ფორმაში), გვწერთ ან გვირეკავთ, შეიძლება მივიღოთ: სახელი და გვარი, ტელეფონის ნომერი, ელფოსტა, კომპანიის დასახელება, ობიექტის მისამართი და სამუშაოს აღწერა.',
+        'When you fill in our form (on the website, in Google Forms or in a Facebook/Instagram lead form), message or call us, we may receive: your name, phone number, email, company name, site address and a description of the work.')
+    html += sec('რისთვის ვიყენებთ', 'How we use it',
+        'მონაცემებს ვიყენებთ მხოლოდ იმისთვის, რომ დაგიკავშირდეთ, მოგიმზადოთ შეთავაზება და შევასრულოთ შეკვეთილი სამუშაო. თქვენს მონაცემებს არ ვყიდით და არ გადავცემთ მესამე პირებს მარკეტინგული მიზნით.',
+        'We use the data only to contact you, prepare an offer and carry out the work you order. We do not sell your data or share it with third parties for marketing.')
+    html += sec('შენახვის ვადა', 'Retention',
+        'მონაცემებს ვინახავთ იმდენ ხანს, რამდენიც საჭიროა თქვენთან თანამშრომლობისთვის და კანონით დადგენილი ვალდებულებების შესასრულებლად.',
+        'We keep data as long as needed for working with you and to meet legal obligations.')
+    html += sec('თქვენი უფლებები', 'Your rights',
+        'შეგიძლიათ ნებისმიერ დროს მოითხოვოთ თქვენი მონაცემების ნახვა, შესწორება ან წაშლა. მოგვწერეთ info@tblenergy.ge-ზე.',
+        'You can request to view, correct or delete your data at any time. Write to info@tblenergy.ge.')
+    html += sec('ქუქი-ფაილები', 'Cookies',
+        'საიტი შეიძლება იყენებდეს ქუქი-ფაილებს და ანალიტიკის ხელსაწყოებს (მაგ. Google, Meta) ვიზიტების სტატისტიკისა და რეკლამის ეფექტიანობის შესაფასებლად.',
+        'The site may use cookies and analytics tools (e.g. Google, Meta) to measure visits and advertising performance.')
+    body = hero([('კონფიდენციალურობა', 'Privacy', None)], t('კონფიდენციალურობის პოლიტიკა', 'Privacy policy'),
+                t('როგორ ვაგროვებთ და ვიყენებთ თქვენს მონაცემებს.', 'How we collect and use your data.'))
+    body += f'<section class="sec"><div class="wrap"><article class="prose"><p class="sp-meta mono">2026-11-20 · TBL Energy</p>{html}</article></div></section>\n'
+    write('privacy.html', 'კონფიდენციალურობის პოლიტიკა | TBL Energy',
+          'TBL Energy-ის კონფიდენციალურობის პოლიტიკა: რა მონაცემებს ვაგროვებთ, როგორ ვიყენებთ და როგორ მოითხოვოთ წაშლა.', body)
+    pages.append(('privacy.html', .3))
     return pages
 
 
